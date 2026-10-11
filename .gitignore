@@ -1,0 +1,30 @@
+# Firmware Binaries (Download separately via official links)
+*.rbi
+*.bin
+*.img
+*.exe
+release/
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Temporary media & screenshots
+.tempmediaStorage/
+*.png
+*.jpg
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local logs & scratch files
+*.log
+scratch/
+test_*.py
+scratch_*.py
+inspect_*.py

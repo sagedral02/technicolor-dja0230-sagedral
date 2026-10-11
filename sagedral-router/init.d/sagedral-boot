@@ -1,0 +1,44 @@
+#!/bin/sh /etc/rc.common
+# Sagedral-Router Boot Persistence Service
+# Runs automatically during system startup
+
+START=98
+STOP=10
+
+start() {
+    # 1. Pastikan direktori web UI aktif
+    mkdir -p /www/sagedral
+
+    # 2. Pulihkan berkas web jika kosong
+    if [ ! -s /www/sagedral/index.html ]; then
+        cp /overlay/sagedral_backup/index.html /www/sagedral/ 2>/dev/null
+    fi
+    if [ ! -s /www/sagedral/api.lua ]; then
+        cp /overlay/sagedral_backup/api.lua /www/sagedral/ 2>/dev/null
+    fi
+    if [ ! -s /www/sagedral/material-symbols.woff2 ]; then
+        cp /overlay/sagedral_backup/material-symbols.woff2 /www/sagedral/ 2>/dev/null
+    fi
+
+    # 3. Hak akses
+    chmod -R 755 /www/sagedral 2>/dev/null
+
+    # 4. Pastikan konfigurasi Nginx ganda (Port 9080 & Port 80 /sagedral/)
+    if [ -f /overlay/sagedral_backup/server_sagedral.conf ]; then
+        cp /overlay/sagedral_backup/server_sagedral.conf /etc/nginx/server_sagedral.conf
+    fi
+    if [ -f /overlay/sagedral_backup/main_sagedral.conf ]; then
+        cp /overlay/sagedral_backup/main_sagedral.conf /etc/nginx/main_sagedral.conf
+    fi
+
+    # 5. Nonaktifkan OBP check
+    uci set modgui.var.check_obp='0' 2>/dev/null
+    uci commit modgui 2>/dev/null
+
+    # 6. Reload Nginx
+    /etc/init.d/nginx reload 2>/dev/null
+}
+
+stop() {
+    :
+}

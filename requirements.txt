@@ -1,0 +1,3 @@
+# Sagedral-Router & Technicolor DJA0230 Toolkit Requirements
+paramiko>=3.0.0
+cryptography>=39.0.0

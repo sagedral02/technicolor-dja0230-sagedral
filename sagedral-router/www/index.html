@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Sagedral-Router | DJA0230 NOC Control Center</title>
+  
+  
+  
+  
+  
+  
+  
+
+  <style>
+    @font-face {
+      font-family: 'Material Symbols Outlined';
+      font-style: normal;
+      font-weight: 100 700;
+      src: url('material-symbols.woff2') format('woff2');
+      font-display: block;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined' !important;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #070d1f; }
+    ::-webkit-scrollbar-thumb { background: #23293c; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4cd7f6; }
+    .glass-panel {
+      background: rgba(21, 27, 45, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.05); }
+    }
+    .pulse-glow { animation: pulseGlow 2.5s infinite ease-in-out; }
+
+    /* Compiled Static Tailwind CSS */
+    *, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-top-32{top:-8rem}.left-0{left:0px}.left-1\/2{left:50%}.left-2\.5{left:0.625rem}.right-0{right:0px}.right-2\.5{right:0.625rem}.right-5{right:1.25rem}.top-0{top:0px}.top-1\/2{top:50%}.top-5{top:1.25rem}.z-10{z-index:10}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.z-\[100\]{z-index:100}.z-\[90\]{z-index:90}.my-3{margin-top:0.75rem;margin-bottom:0.75rem}.my-4{margin-top:1rem;margin-bottom:1rem}.-ml-1{margin-left:-0.25rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mr-2{margin-right:0.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-1\.5{margin-top:0.375rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:0.375rem}.h-10{height:2.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-2\.5{height:0.625rem}.h-32{height:8rem}.h-36{height:9rem}.h-4{height:1rem}.h-48{height:12rem}.h-9{height:2.25rem}.h-\[10\%\]{height:10%}.h-\[100\%\]{height:100%}.h-\[12\%\]{height:12%}.h-\[15\%\]{height:15%}.h-\[18\%\]{height:18%}.h-\[22\%\]{height:22%}.h-\[30\%\]{height:30%}.h-\[35\%\]{height:35%}.h-\[48\%\]{height:48%}.h-\[55\%\]{height:55%}.h-\[600px\]{height:600px}.h-\[62\%\]{height:62%}.h-\[64\%\]{height:64%}.h-\[65\%\]{height:65%}.h-\[68\%\]{height:68%}.h-\[70\%\]{height:70%}.h-\[72\%\]{height:72%}.h-\[78\%\]{height:78%}.h-\[8\%\]{height:8%}.h-\[80\%\]{height:80%}.h-\[84\%\]{height:84%}.h-\[85\%\]{height:85%}.h-\[88\%\]{height:88%}.h-\[92\%\]{height:92%}.h-\[96\%\]{height:96%}.h-full{height:100%}.max-h-\[92vh\]{max-height:92vh}.min-h-screen{min-height:100vh}.w-1\.5{width:0.375rem}.w-10{width:2.5rem}.w-2{width:0.5rem}.w-2\.5{width:0.625rem}.w-64{width:16rem}.w-9{width:2.25rem}.w-\[600px\]{width:600px}.w-full{width:100%}.w-px{width:1px}.min-w-0{min-width:0px}.min-w-\[680px\]{min-width:680px}.max-w-full{max-width:100%}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-x-full{--tw-translate-x:-100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-\[-100px\]{--tw-translate-y:-100px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-col-reverse{flex-direction:column-reverse}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-0\.5{gap:0.125rem}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-3\.5{gap:0.875rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-surface-container\/60 > :not([hidden]) ~ :not([hidden]){border-color:rgb(25 31 49 / 0.6)}.self-start{align-self:flex-start}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.overflow-x-hidden{overflow-x:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-pre-wrap{white-space:pre-wrap}.break-all{word-break:break-all}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-l{border-top-left-radius:0.25rem;border-bottom-left-radius:0.25rem}.rounded-r{border-top-right-radius:0.25rem;border-bottom-right-radius:0.25rem}.rounded-t{border-top-left-radius:0.25rem;border-top-right-radius:0.25rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-error\/30{border-color:rgb(255 180 171 / 0.3)}.border-error\/50{border-color:rgb(255 180 171 / 0.5)}.border-outline-variant{--tw-border-opacity:1;border-color:rgb(61 73 76 / var(--tw-border-opacity, 1))}.border-outline-variant\/20{border-color:rgb(61 73 76 / 0.2)}.border-outline-variant\/30{border-color:rgb(61 73 76 / 0.3)}.border-outline-variant\/40{border-color:rgb(61 73 76 / 0.4)}.border-primary\/20{border-color:rgb(76 215 246 / 0.2)}.border-secondary\/20{border-color:rgb(78 222 163 / 0.2)}.bg-background{--tw-bg-opacity:1;background-color:rgb(12 19 36 / var(--tw-bg-opacity, 1))}.bg-black\/70{background-color:rgb(0 0 0 / 0.7)}.bg-black\/75{background-color:rgb(0 0 0 / 0.75)}.bg-error-container\/25{background-color:rgb(147 0 10 / 0.25)}.bg-error-container\/30{background-color:rgb(147 0 10 / 0.3)}.bg-error-container\/40{background-color:rgb(147 0 10 / 0.4)}.bg-outline-variant\/30{background-color:rgb(61 73 76 / 0.3)}.bg-primary{--tw-bg-opacity:1;background-color:rgb(76 215 246 / var(--tw-bg-opacity, 1))}.bg-primary-container{--tw-bg-opacity:1;background-color:rgb(6 182 212 / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(76 215 246 / 0.1)}.bg-primary\/15{background-color:rgb(76 215 246 / 0.15)}.bg-primary\/20{background-color:rgb(76 215 246 / 0.2)}.bg-secondary{--tw-bg-opacity:1;background-color:rgb(78 222 163 / var(--tw-bg-opacity, 1))}.bg-secondary-container\/20{background-color:rgb(0 165 114 / 0.2)}.bg-secondary\/10{background-color:rgb(78 222 163 / 0.1)}.bg-secondary\/15{background-color:rgb(78 222 163 / 0.15)}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(25 31 49 / var(--tw-bg-opacity, 1))}.bg-surface-container-high{--tw-bg-opacity:1;background-color:rgb(35 41 60 / var(--tw-bg-opacity, 1))}.bg-surface-container-highest{--tw-bg-opacity:1;background-color:rgb(46 52 71 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(21 27 45 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(7 13 31 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest\/50{background-color:rgb(7 13 31 / 0.5)}.bg-surface-container-lowest\/70{background-color:rgb(7 13 31 / 0.7)}.bg-surface-container-lowest\/80{background-color:rgb(7 13 31 / 0.8)}.bg-surface-variant{--tw-bg-opacity:1;background-color:rgb(46 52 71 / var(--tw-bg-opacity, 1))}.bg-surface\/90{background-color:rgb(12 19 36 / 0.9)}.bg-transparent{background-color:transparent}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-0\.5{padding-left:0.125rem;padding-right:0.125rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-1{padding-bottom:0.25rem}.pb-12{padding-bottom:3rem}.pb-2{padding-bottom:0.5rem}.pb-3{padding-bottom:0.75rem}.pl-0{padding-left:0px}.pl-8{padding-left:2rem}.pr-3{padding-right:0.75rem}.pr-8{padding-right:2rem}.pt-1{padding-top:0.25rem}.pt-2{padding-top:0.5rem}.pt-20{padding-top:5rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-body-md{font-family:Inter, sans-serif}.font-body-sm{font-family:Inter, sans-serif}.font-caption{font-family:Inter, sans-serif}.font-headline-sm{font-family:Inter, sans-serif}.font-label-code{font-family:JetBrains Mono, monospace}.font-telemetry-md{font-family:JetBrains Mono, monospace}.font-telemetry-sm{font-family:JetBrains Mono, monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[13px\]{font-size:13px}.text-\[14px\]{font-size:14px}.text-\[16px\]{font-size:16px}.text-\[18px\]{font-size:18px}.text-\[20px\]{font-size:20px}.text-\[22px\]{font-size:22px}.text-\[24px\]{font-size:24px}.text-\[26px\]{font-size:26px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-wider{letter-spacing:0.05em}.text-error{--tw-text-opacity:1;color:rgb(255 180 171 / var(--tw-text-opacity, 1))}.text-on-primary{--tw-text-opacity:1;color:rgb(0 54 64 / var(--tw-text-opacity, 1))}.text-on-primary-container{--tw-text-opacity:1;color:rgb(0 66 79 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(220 225 251 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(188 201 205 / var(--tw-text-opacity, 1))}.text-on-surface-variant\/60{color:rgb(188 201 205 / 0.6)}.text-outline{--tw-text-opacity:1;color:rgb(134 147 151 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(76 215 246 / var(--tw-text-opacity, 1))}.text-primary-fixed-dim{--tw-text-opacity:1;color:rgb(76 215 246 / var(--tw-text-opacity, 1))}.text-secondary{--tw-text-opacity:1;color:rgb(78 222 163 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-15{opacity:0.15}.opacity-60{opacity:0.6}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_0_6px_rgba\(78\2c 222\2c 163\2c 0\.8\)\]{--tw-shadow:0 0 6px rgba(78,222,163,0.8);--tw-shadow-colored:0 0 6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_0_8px_rgba\(78\2c 222\2c 163\2c 0\.6\)\]{--tw-shadow:0 0 8px rgba(78,222,163,0.6);--tw-shadow-colored:0 0 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_0_8px_rgba\(78\2c 222\2c 163\2c 0\.7\)\]{--tw-shadow:0 0 8px rgba(78,222,163,0.7);--tw-shadow-colored:0 0 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.selection\:bg-primary-container *::selection{--tw-bg-opacity:1;background-color:rgb(6 182 212 / var(--tw-bg-opacity, 1))}.selection\:text-on-primary-container *::selection{--tw-text-opacity:1;color:rgb(0 66 79 / var(--tw-text-opacity, 1))}.selection\:bg-primary-container::selection{--tw-bg-opacity:1;background-color:rgb(6 182 212 / var(--tw-bg-opacity, 1))}.selection\:text-on-primary-container::selection{--tw-text-opacity:1;color:rgb(0 66 79 / var(--tw-text-opacity, 1))}.placeholder\:text-on-surface-variant::placeholder{--tw-text-opacity:1;color:rgb(188 201 205 / var(--tw-text-opacity, 1))}.focus-within\:border-primary:focus-within{--tw-border-opacity:1;border-color:rgb(76 215 246 / var(--tw-border-opacity, 1))}.hover\:bg-error-container:hover{--tw-bg-opacity:1;background-color:rgb(147 0 10 / var(--tw-bg-opacity, 1))}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(76 215 246 / var(--tw-bg-opacity, 1))}.hover\:bg-primary-fixed:hover{--tw-bg-opacity:1;background-color:rgb(172 237 255 / var(--tw-bg-opacity, 1))}.hover\:bg-primary-fixed-dim:hover{--tw-bg-opacity:1;background-color:rgb(76 215 246 / var(--tw-bg-opacity, 1))}.hover\:bg-secondary:hover{--tw-bg-opacity:1;background-color:rgb(78 222 163 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container:hover{--tw-bg-opacity:1;background-color:rgb(25 31 49 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-high:hover{--tw-bg-opacity:1;background-color:rgb(35 41 60 / var(--tw-bg-opacity, 1))}.hover\:text-on-error:hover{--tw-text-opacity:1;color:rgb(105 0 5 / var(--tw-text-opacity, 1))}.hover\:text-on-primary:hover{--tw-text-opacity:1;color:rgb(0 54 64 / var(--tw-text-opacity, 1))}.hover\:text-on-secondary:hover{--tw-text-opacity:1;color:rgb(0 56 36 / var(--tw-text-opacity, 1))}.hover\:text-on-surface:hover{--tw-text-opacity:1;color:rgb(220 225 251 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(76 215 246 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:opacity-100:hover{opacity:1}.focus\:border-primary:focus{--tw-border-opacity:1;border-color:rgb(76 215 246 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.active\:scale-\[0\.99\]:active{--tw-scale-x:0.99;--tw-scale-y:0.99;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 480px){.xs\:inline{display:inline}}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:hidden{display:none}.sm\:h-10{height:2.5rem}.sm\:w-10{width:2.5rem}.sm\:w-auto{width:auto}.sm\:flex-none{flex:none}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:gap-1\.5{gap:0.375rem}.sm\:gap-2\.5{gap:0.625rem}.sm\:gap-3{gap:0.75rem}.sm\:gap-4{gap:1rem}.sm\:self-auto{align-self:auto}.sm\:p-2{padding:0.5rem}.sm\:p-3{padding:0.75rem}.sm\:p-3\.5{padding:0.875rem}.sm\:p-4{padding:1rem}.sm\:p-5{padding:1.25rem}.sm\:px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.sm\:px-3{padding-left:0.75rem;padding-right:0.75rem}.sm\:px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.sm\:py-3{padding-top:0.75rem;padding-bottom:0.75rem}.sm\:text-\[11px\]{font-size:11px}.sm\:text-\[24px\]{font-size:24px}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-xs{font-size:0.75rem;line-height:1rem}}@media (min-width: 768px){.md\:block{display:block}.md\:flex{display:flex}.md\:w-72{width:18rem}.md\:w-auto{width:auto}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}}@media (min-width: 1024px){.lg\:left-64{left:16rem}.lg\:hidden{display:none}.lg\:translate-x-0{--tw-translate-x:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-8{grid-template-columns:repeat(8, minmax(0, 1fr))}.lg\:pl-64{padding-left:16rem}}@media (min-width: 1280px){.xl\:flex{display:flex}.xl\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}}@media (min-width: 1536px){.\32xl\:flex{display:flex}}
+  </style>
+
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+
+  <!-- ========================================================================= -->
+  <!-- TOAST NOTIFICATION -->
+  <!-- ========================================================================= -->
+  <div id="toast" class="fixed top-5 right-5 z-[100] transform transition-all duration-300 translate-y-[-100px] opacity-0 pointer-events-none">
+    <div id="toastContent" class="flex items-center gap-3 px-4 py-3 rounded-lg shadow-2xl border text-sm font-body-md">
+      <span id="toastIcon" class="material-symbols-outlined text-[20px]">info</span>
+      <span id="toastMsg">Notifikasi</span>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. CLEAN LOGIN VIEW (STITCH OBSIDIAN DESIGN - TANPA STRIP PREFLIGHT) -->
+  <!-- ========================================================================= -->
+  <div id="loginView" class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+    <!-- Ambient Glow -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none pulse-glow"></div>
+
+    <main class="w-full max-w-md bg-surface-container-low p-6 rounded-xl shadow-2xl border border-outline-variant/30 relative z-10 flex flex-col gap-4">
+      <!-- Gateway Identity Ribbon -->
+      <div class="w-full bg-surface-container rounded-lg p-3 shadow-md border border-outline-variant/20">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined text-[24px]">router</span>
+            </div>
+            <div class="min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="font-headline-sm text-sm font-semibold text-on-surface truncate">Technicolor DJA0230</span>
+                <span class="bg-primary/20 text-primary font-label-code text-[11px] px-1.5 py-0.5 rounded">v18.1.c</span>
+              </div>
+              <p class="font-label-code text-[11px] text-on-surface-variant truncate">ARMv7 BCM63138 • Homeware Core</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 bg-secondary/10 px-2.5 py-1 rounded text-right shrink-0">
+            <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+            <span class="font-label-code text-[11px] text-secondary font-semibold">PORT :80 /sagedral</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Authentication Card -->
+      <div class="w-full bg-surface-container-high rounded-xl p-5 shadow-xl flex flex-col gap-4 border border-outline-variant/20">
+        <!-- Session Security Telemetry Pill -->
+        <div class="bg-surface-container-lowest p-2.5 rounded-lg flex items-center justify-between border border-outline-variant/20">
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-secondary text-[16px]">verified_user</span>
+            <span class="font-label-code text-[11px] text-on-surface">192.168.0.1</span>
+          </div>
+          <span class="font-label-code text-[11px] text-primary">Web UI Synced Auth</span>
+        </div>
+
+        <!-- Auth Form -->
+        <form class="flex flex-col gap-4" id="authForm" onsubmit="handleLogin(event)">
+          <!-- Identity Field -->
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <label class="font-caption text-[11px] text-on-surface-variant uppercase tracking-wider">Operator Identity</label>
+              <span class="bg-secondary/15 text-secondary font-label-code text-[11px] px-1.5 py-0.5 rounded">Root / Admin</span>
+            </div>
+            <div class="flex items-center bg-surface-container-lowest rounded px-3 py-2 border border-outline-variant/30">
+              <span class="material-symbols-outlined text-outline text-[18px] mr-2">account_circle</span>
+              <input class="w-full bg-transparent font-telemetry-sm text-xs text-on-surface focus:outline-none cursor-not-allowed" readonly type="text" value="root / admin"/>
+              <span class="material-symbols-outlined text-secondary text-[16px]">lock</span>
+            </div>
+          </div>
+
+          <!-- Access Key Field -->
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <label class="font-caption text-[11px] text-on-surface-variant uppercase tracking-wider" for="passInput">Password Modem</label>
+              <span class="font-label-code text-[11px] text-outline">Modem Web UI Pass</span>
+            </div>
+            <div class="relative flex items-center bg-surface-container-lowest rounded px-3 py-2 border border-outline-variant/30 focus-within:border-primary transition-colors">
+              <span class="material-symbols-outlined text-outline text-[18px] mr-2">key</span>
+              <input class="w-full bg-transparent font-telemetry-sm text-xs text-on-surface focus:outline-none pr-8" id="passInput" placeholder="Masukkan kata sandi Web GUI modem" type="password" required autocomplete="current-password"/>
+              <button class="absolute right-2.5 text-outline hover:text-primary transition-colors flex items-center cursor-pointer" onclick="togglePassVisibility()" type="button" title="Lihat Sandi">
+                <span class="material-symbols-outlined text-[18px]" id="eyeIcon">visibility</span>
+              </button>
+            </div>
+            <span class="font-caption text-[10px] text-outline">Gunakan kata sandi yang sama dengan GUI modem Anda (contoh: root/admin).</span>
+          </div>
+
+          <!-- Error Alert Banner -->
+          <div id="loginError" class="hidden bg-error-container/40 border border-error/50 p-2.5 rounded flex items-center gap-2 text-error text-xs font-body-sm">
+            <span class="material-symbols-outlined text-[18px]">error</span>
+            <span id="loginErrorMsg">Kata sandi salah!</span>
+          </div>
+
+          <!-- Session Preferences -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-[11px] text-on-surface-variant">Durasi Sesi (TTL)</label>
+              <div class="bg-surface-container-lowest rounded px-2.5 py-1.5 border border-outline-variant/20 flex items-center">
+                <select id="ttlSelect" class="w-full bg-transparent font-telemetry-sm text-[11px] text-on-surface focus:outline-none">
+                  <option class="bg-surface-container-highest" value="1800">30 Menit</option>
+                  <option class="bg-surface-container-highest" value="7200" selected>2 Jam</option>
+                  <option class="bg-surface-container-highest" value="86400">24 Jam</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-caption text-[11px] text-on-surface-variant">Console Mode</label>
+              <div class="bg-surface-container-lowest rounded px-2.5 py-1.5 border border-outline-variant/20 flex items-center">
+                <div class="w-full font-telemetry-sm text-[11px] text-secondary flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> ROOT NOC
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Primary CTA Button -->
+          <button class="w-full bg-primary hover:bg-primary-fixed-dim text-on-primary font-headline-sm text-sm font-semibold py-2.5 px-4 rounded shadow-lg flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer" id="authBtn" type="submit">
+            <span class="material-symbols-outlined text-[20px]" id="authBtnIcon">login</span>
+            <span id="authBtnText">Masuk ke Sagedral Control</span>
+          </button>
+        </form>
+
+        <!-- Quick Info Footer -->
+        <div class="pt-1 flex items-center justify-between text-outline text-[11px] font-label-code">
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">shield</span> SHA-256 Crypt</span>
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">sync</span> Auto-Sync Modem</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. DASHBOARD ROOT VIEW (SIDEBAR MODULAR NAVIGATION) -->
+  <!-- ========================================================================= -->
+  <div id="dashboardView" class="min-h-screen relative w-full overflow-x-hidden hidden">
+    
+    <!-- MOBILE SIDEBAR BACKDROP -->
+    <div id="sidebarBackdrop" onclick="toggleSidebar(false)" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 hidden transition-opacity duration-300 lg:hidden"></div>
+
+    <!-- LEFT SIDEBAR (OFF-CANVAS ON MOBILE, FIXED ON DESKTOP) -->
+    <aside id="mainSidebar" class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-2xl border-r border-outline-variant/30 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
+      <div class="flex flex-col">
+        <!-- Sidebar Brand Header -->
+        <div class="h-16 px-4 flex items-center justify-between bg-surface-container-lowest/70 border-b border-outline-variant/20">
+          <div class="flex items-center gap-2.5">
+            <div class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(78,222,163,0.6)] animate-pulse"></div>
+            <div class="flex flex-col">
+              <span class="font-label-code text-xs font-bold uppercase tracking-wider text-primary">DJA0230 NOC</span>
+              <span class="font-telemetry-sm text-[11px] text-on-surface-variant">192.168.0.1/sagedral</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-label-code text-[10px] px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-semibold border border-primary/20">SAGEDRAL</span>
+            <button onclick="toggleSidebar(false)" class="p-1 rounded text-on-surface-variant hover:text-on-surface lg:hidden cursor-pointer" title="Tutup Menu">
+              <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sidebar Navigation Sections (Modular Tab Switching) -->
+        <div class="px-4 pt-4 pb-1">
+          <span class="font-label-code text-[10px] uppercase text-on-surface-variant/60 tracking-wider">Modul Menu</span>
+        </div>
+        <nav class="flex flex-col gap-1 px-2" id="sideNav">
+          <button onclick="switchTab('overview')" id="sideTab-overview" class="side-tab flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-sm text-sm text-left transition-all cursor-pointer">
+            <span class="material-symbols-outlined text-[18px]">space_dashboard</span>
+            <span>Dashboard Overview</span>
+          </button>
+          <button onclick="switchTab('endpoints')" id="sideTab-endpoints" class="side-tab flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-sm text-left cursor-pointer">
+            <span class="material-symbols-outlined text-[18px]">devices</span>
+            <div class="flex items-center justify-between w-full">
+              <span>Connected Devices</span>
+              <span id="sideActiveBadge" class="font-label-code text-[10px] px-1.5 py-0.2 rounded bg-surface-container-highest text-primary">5</span>
+            </div>
+          </button>
+          <button onclick="switchTab('traffic')" id="sideTab-traffic" class="side-tab flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-sm text-left cursor-pointer">
+            <span class="material-symbols-outlined text-[18px]">query_stats</span>
+            <span>Traffic &amp; Flow</span>
+          </button>
+          <button onclick="switchTab('chassis')" id="sideTab-chassis" class="side-tab flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-sm text-left cursor-pointer">
+            <span class="material-symbols-outlined text-[18px]">settings_ethernet</span>
+            <span>Chassis Ports</span>
+          </button>
+          <button onclick="switchTab('diagnostics')" id="sideTab-diagnostics" class="side-tab flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-sm text-left cursor-pointer">
+            <span class="material-symbols-outlined text-[18px]">terminal</span>
+            <span>Diagnostics &amp; Ops</span>
+          </button>
+        </nav>
+
+        <div class="px-4 pt-5 pb-1">
+          <span class="font-label-code text-[10px] uppercase text-on-surface-variant/60 tracking-wider">Gateway System</span>
+        </div>
+        <nav class="flex flex-col gap-1 px-2">
+          <a href="http://192.168.0.1/" target="_blank" class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors text-sm">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+              <span>Web GUI Modem</span>
+            </div>
+            <span class="text-[10px] font-label-code text-outline">:80</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar Footer Live Telemetry -->
+      <div class="p-4 bg-surface-container-lowest/80 border-t border-outline-variant/20 flex flex-col gap-1.5">
+        <div class="flex items-center justify-between">
+          <span class="font-label-code text-[11px] text-on-surface-variant">UPTIME</span>
+          <span id="sideUptime" class="font-telemetry-sm text-[11px] text-primary font-semibold">0d 06h 13m</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="font-label-code text-[11px] text-on-surface-variant">MEM ALLOC</span>
+          <span id="sideMem" class="font-telemetry-sm text-[11px] text-secondary font-semibold">392MB / 941MB</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN BODY (0 PADDING ON MOBILE, 64 ON DESKTOP) -->
+    <div class="pl-0 lg:pl-64 min-h-screen flex flex-col transition-all w-full">
+      
+      <!-- TOP FIXED HEADER (RESPONSIVE FULL-WIDTH ON MOBILE) -->
+      <header class="fixed top-0 left-0 lg:left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl z-30 border-b border-outline-variant/30 px-3 sm:px-6 flex items-center justify-between transition-all">
+        
+        <!-- Left: Hamburger (Mobile) + Current Section Title & Gateway Status Pill -->
+        <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+          <button onclick="toggleSidebar(true)" class="p-2 -ml-1 text-on-surface hover:text-primary rounded-lg hover:bg-surface-container lg:hidden flex items-center justify-center cursor-pointer shrink-0" title="Buka Menu Navigasi">
+            <span class="material-symbols-outlined text-[24px]">menu</span>
+          </button>
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="font-headline-sm text-xs sm:text-sm font-bold text-on-surface truncate" id="currentSectionTitle">Dashboard Overview</span>
+            <span class="font-label-code text-[11px] text-outline hidden xs:inline">•</span>
+            <span class="font-label-code text-[11px] sm:text-xs text-secondary font-semibold hidden xs:inline truncate" id="currentSectionSubtitle">NOC Live</span>
+          </div>
+          <div class="h-4 w-px bg-outline-variant/30 hidden md:block"></div>
+          <div class="hidden md:flex items-center gap-3">
+            <div class="flex items-center gap-1.5">
+              <span class="font-label-code text-xs text-on-surface-variant">WAN:</span>
+              <span id="headerWanIp" class="font-telemetry-sm text-xs text-on-surface px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 font-semibold">10.42.93.26</span>
+            </div>
+            <div class="hidden xl:flex items-center gap-1.5">
+              <span class="font-label-code text-xs text-on-surface-variant">SOC:</span>
+              <span id="headerSocTemp" class="font-telemetry-sm text-xs text-secondary px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 font-semibold">41.0°C</span>
+            </div>
+            <div class="hidden 2xl:flex items-center gap-1.5">
+              <span class="font-label-code text-xs text-on-surface-variant px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30">Homeware 18.1.c</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Actions (Refresh & LOG OUT BUTTON) -->
+        <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <button id="btnHeaderRefresh" onclick="manualRefresh()" class="p-2 sm:px-2.5 sm:py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5 text-xs font-label-code cursor-pointer" title="Refresh Telemetry">
+            <span id="iconHeaderRefresh" class="material-symbols-outlined text-[18px]">sync</span>
+            <span class="hidden sm:inline">Refresh</span>
+          </button>
+          <button onclick="handleLogout()" class="px-2.5 sm:px-3 py-1.5 rounded-lg bg-error-container/25 hover:bg-error-container text-error hover:text-white transition-all flex items-center gap-1.5 text-xs font-label-code font-semibold border border-error/30 cursor-pointer shadow-sm" title="Keluar dari Sesi (Logout)">
+            <span class="material-symbols-outlined text-[18px]">logout</span>
+            <span class="hidden xs:inline">Log Out</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- MAIN MODULAR CONTENT (RESPONSIVE PADDING) -->
+      <main class="relative pt-20 px-3 sm:px-6 pb-12 w-full max-w-full overflow-x-hidden">
+
+        <!-- =================================================================== -->
+        <!-- VIEW 1: DASHBOARD OVERVIEW -->
+        <!-- =================================================================== -->
+        <div id="view-overview" class="tab-view flex flex-col gap-6">
+          
+          <!-- Page Title & Status Banner -->
+          <div class="flex flex-row items-center justify-between gap-2 bg-surface-container-low p-2 sm:p-3.5 rounded-lg border border-outline-variant/20 shadow-sm">
+            <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-primary/15 flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[16px] sm:text-[22px]">space_dashboard</span>
+              </div>
+              <div class="min-w-0">
+                <h1 class="font-headline-sm text-xs sm:text-sm md:text-base font-bold text-on-surface truncate">Gateway Health &amp; Telemetry</h1>
+                <p class="font-label-code text-[10px] sm:text-xs text-on-surface-variant truncate">DJA0230 • BCM63138 • Homeware 18.1.c</p>
+              </div>
+            </div>
+            <div class="flex items-center shrink-0">
+              <span class="inline-flex items-center gap-1 font-label-code text-[10px] sm:text-xs px-2 py-0.5 rounded bg-secondary/10 text-secondary border border-secondary/20 font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                NOC ONLINE
+              </span>
+            </div>
+          </div>
+
+          <!-- TOP HARDWARE & TELEMETRY BAR (6 Metric Cards - 2 cols on mobile, 3 on tablet, 6 on desktop) -->
+          <section class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-2.5 sm:gap-3">
+            
+            <!-- Card 1: WAN State -->
+            <div class="p-3 sm:p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between text-on-surface-variant font-caption text-[10px] sm:text-[11px] uppercase tracking-wider">
+                <span>WAN Gateway</span>
+                <span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(78,222,163,0.7)] animate-pulse"></span>
+              </div>
+              <div class="mt-2">
+                <div id="cardWanIp" class="font-telemetry-md text-xs sm:text-sm text-primary font-bold truncate">10.42.93.26</div>
+                <div class="flex items-center gap-1 text-on-surface-variant font-label-code text-[10px] sm:text-[11px] mt-0.5">
+                  <span>WWAN</span>
+                  <span class="text-on-surface">·</span>
+                  <span class="text-secondary font-medium">ESTABLISHED</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Optical Power / Status -->
+            <div class="p-3 sm:p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between text-on-surface-variant font-caption text-[10px] sm:text-[11px] uppercase tracking-wider">
+                <span>GPON Optical RX</span>
+                <span class="material-symbols-outlined text-secondary text-[16px]">podcasts</span>
+              </div>
+              <div class="mt-2">
+                <div class="font-telemetry-md text-xs sm:text-sm text-secondary font-bold">-18.42 dBm</div>
+                <div class="flex items-center justify-between text-on-surface-variant font-label-code text-[10px] sm:text-[11px] mt-0.5">
+                  <span>NORM (-8..-27)</span>
+                  <span class="text-primary-fixed-dim">TX 2.4 dBm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Kernel Uptime -->
+            <div class="p-3 sm:p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between text-on-surface-variant font-caption text-[10px] sm:text-[11px] uppercase tracking-wider">
+                <span>Kernel Uptime</span>
+                <span class="material-symbols-outlined text-primary text-[16px]">schedule</span>
+              </div>
+              <div class="mt-2">
+                <div id="cardUptime" class="font-telemetry-md text-xs sm:text-sm text-on-surface font-bold truncate">0d 06h 13m</div>
+                <div class="text-on-surface-variant font-label-code text-[10px] sm:text-[11px] mt-0.5 truncate">
+                  Homeware OpenWrt
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: CPU Utilization -->
+            <div class="p-3 sm:p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between text-on-surface-variant font-caption text-[10px] sm:text-[11px] uppercase tracking-wider">
+                <span>BCM63138 Dual</span>
+                <span id="cardCpuLoadPct" class="font-label-code text-[10px] sm:text-[11px] text-primary">22% LOAD</span>
+              </div>
+              <div class="mt-2">
+                <div class="flex items-baseline gap-1.5">
+                  <span id="cardCpuL1" class="font-telemetry-md text-xs sm:text-sm text-on-surface font-bold">0.45</span>
+                  <span id="cardCpuL5" class="font-label-code text-[10px] sm:text-[11px] text-on-surface-variant">0.38</span>
+                </div>
+                <div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-1.5">
+                  <div id="cardCpuBar" class="bg-primary h-full rounded-full transition-all duration-500" style="width: 25%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Memory Allocation -->
+            <div class="p-3 sm:p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between text-on-surface-variant font-caption text-[10px] sm:text-[11px] uppercase tracking-wider">
+                <span>DDR3 RAM Pool</span>
+                <span id="cardMemPct" class="font-label-code text-[10px] sm:text-[11px] text-secondary">41%</span>
+              </div>
+              <div class="mt-2">
+                <div id="cardMemMb" class="font-telemetry-md text-xs sm:text-sm text-on-surface font-bold truncate">392 / 941 MB</div>
+                <div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-1.5">
+                  <div id="cardMemBar" class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 41%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6: SoC Thermal -->
+            <div class="p-3 sm:p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20 shadow-sm flex flex-col justify-between">
+              <div class="flex items-center justify-between text-on-surface-variant font-caption text-[10px] sm:text-[11px] uppercase tracking-wider">
+                <span>SoC Thermal</span>
+                <span class="material-symbols-outlined text-secondary text-[16px]">device_thermostat</span>
+              </div>
+              <div class="mt-2">
+                <div id="cardTemp" class="font-telemetry-md text-xs sm:text-sm text-on-surface font-bold">41.0°C</div>
+                <div class="flex items-center justify-between text-on-surface-variant font-label-code text-[10px] sm:text-[11px] mt-0.5">
+                  <span class="text-secondary font-medium">NOMINAL</span>
+                  <span>MAX 85°C</span>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- Executive Routing Cards & Quick Jump Nav -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-3.5 sm:gap-4">
+            
+            <!-- Box A: System Architecture & Subsystem Matrix -->
+            <div class="bg-surface-container-low rounded-lg p-3.5 sm:p-5 border border-outline-variant/20 shadow-md flex flex-col gap-3">
+              <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[20px]">memory</span>
+                  <span class="font-headline-sm text-sm font-semibold text-on-surface">Subsystem Architecture</span>
+                </div>
+                <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container text-primary">ARMv7 Core</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 font-label-code text-xs">
+                <div class="bg-surface-container p-3 rounded flex flex-col gap-1 border border-outline-variant/20">
+                  <span class="text-on-surface-variant text-[11px]">Netfilter Hook</span>
+                  <span class="text-secondary font-bold">L2 / L3 Root Active</span>
+                  <span class="text-[10px] text-outline">ebtables + iptables</span>
+                </div>
+                <div class="bg-surface-container p-3 rounded flex flex-col gap-1 border border-outline-variant/20">
+                  <span class="text-on-surface-variant text-[11px]">Hardware Acceleration</span>
+                  <span class="text-secondary font-bold">Broadcom Flow Cache</span>
+                  <span class="text-[10px] text-outline">Selective QoS Bypass</span>
+                </div>
+                <div class="bg-surface-container p-3 rounded flex flex-col gap-1 border border-outline-variant/20">
+                  <span class="text-on-surface-variant text-[11px]">Dual-Band Wi-Fi</span>
+                  <span class="text-primary font-bold">5GHz AC + 2.4GHz N</span>
+                  <span class="text-[10px] text-outline">Broadcom wl Driver</span>
+                </div>
+                <div class="bg-surface-container p-3 rounded flex flex-col gap-1 border border-outline-variant/20">
+                  <span class="text-on-surface-variant text-[11px]">CFE Bootbank Guard</span>
+                  <span class="text-secondary font-bold">Bank 2 Active Lock</span>
+                  <span class="text-[10px] text-outline">Reboot Persistent</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Box B: Quick Action Hub -->
+            <div class="bg-surface-container-low rounded-lg p-3.5 sm:p-5 border border-outline-variant/20 shadow-md flex flex-col justify-between gap-3">
+              <div>
+                <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">bolt</span>
+                    <span class="font-headline-sm text-sm font-semibold text-on-surface">Quick Access Modules</span>
+                  </div>
+                  <span class="font-label-code text-[11px] text-on-surface-variant">Sidebar Navigation</span>
+                </div>
+                <p class="font-body-sm text-xs text-on-surface-variant mt-2 leading-relaxed">
+                  Navigasi ke setiap bagian fungsional router langsung dari sidebar di sebelah kiri atau menu cepat:
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 font-label-code text-xs">
+                <button onclick="switchTab('endpoints')" class="p-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary transition-all flex items-center gap-2 border border-outline-variant/20 cursor-pointer">
+                  <span class="material-symbols-outlined text-primary text-[18px]">devices</span>
+                  <div class="flex flex-col text-left">
+                    <span class="font-bold">Endpoints</span>
+                    <span class="text-[10px] text-outline">Limit &amp; Blokir</span>
+                  </div>
+                </button>
+                <button onclick="switchTab('traffic')" class="p-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary transition-all flex items-center gap-2 border border-outline-variant/20 cursor-pointer">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">query_stats</span>
+                  <div class="flex flex-col text-left">
+                    <span class="font-bold">Traffic &amp; Flow</span>
+                    <span class="text-[10px] text-outline">Grafik Real-Time</span>
+                  </div>
+                </button>
+                <button onclick="switchTab('chassis')" class="p-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary transition-all flex items-center gap-2 border border-outline-variant/20 cursor-pointer">
+                  <span class="material-symbols-outlined text-primary text-[18px]">settings_ethernet</span>
+                  <div class="flex flex-col text-left">
+                    <span class="font-bold">Chassis Ports</span>
+                    <span class="text-[10px] text-outline">Status 8 Port</span>
+                  </div>
+                </button>
+                <button onclick="switchTab('diagnostics')" class="p-2.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary transition-all flex items-center gap-2 border border-outline-variant/20 cursor-pointer">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">terminal</span>
+                  <div class="flex flex-col text-left">
+                    <span class="font-bold">Diagnostics</span>
+                    <span class="text-[10px] text-outline">Ping, DNS &amp; Ops</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- =================================================================== -->
+        <!-- VIEW 2: CONNECTED ENDPOINTS (DEDICATED FULL WIDTH VIEW) -->
+        <!-- =================================================================== -->
+        <div id="view-endpoints" class="tab-view hidden flex flex-col gap-4">
+          
+          <div class="bg-surface-container-low rounded-lg p-3.5 sm:p-5 shadow-md border border-outline-variant/20 flex flex-col gap-3.5 sm:gap-4">
+            
+            <!-- Table Header & Search Filter -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-outline-variant/20">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary/15 flex items-center justify-center text-primary shrink-0">
+                  <span class="material-symbols-outlined text-[20px] sm:text-[24px]">devices</span>
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h2 class="font-headline-sm text-sm sm:text-base font-bold text-on-surface truncate">Connected Endpoints Management</h2>
+                    <span id="activeCountBadge" class="px-2 py-0.5 rounded-full bg-primary-container font-label-code text-[10px] sm:text-[11px] text-on-primary-container font-bold">5 Active</span>
+                  </div>
+                  <p class="font-body-sm text-[11px] sm:text-xs text-on-surface-variant">Kendali langsung limit bandwidth QoS &amp; blokir perangkat (L2/L3 Root Netfilter Hook).</p>
+                </div>
+              </div>
+
+              <!-- Search Box (Fluid full-width on mobile) -->
+              <div class="flex items-center gap-2 w-full md:w-auto">
+                <div class="relative flex-1 md:w-72">
+                  <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]">search</span>
+                  <input id="deviceSearchInput" oninput="filterDevices()" class="w-full pl-8 pr-3 py-1.5 bg-surface-container text-on-surface placeholder:text-on-surface-variant font-label-code text-xs rounded border border-outline-variant/30 focus:outline-none focus:border-primary transition-colors" placeholder="Cari nama, IP, MAC..." type="text"/>
+                </div>
+                <button onclick="fetchStatus()" class="p-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors border border-outline-variant/20 cursor-pointer shrink-0" title="Refresh Host">
+                  <span class="material-symbols-outlined text-[18px]">sync</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Full Width Devices Table Container with Mobile Horizontal Swipe Support -->
+            <div class="w-full">
+              <div class="sm:hidden text-[10px] text-outline font-label-code flex items-center justify-between pb-1 px-0.5">
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">swipe</span> Geser tabel untuk kolom lengkap</span>
+                <span class="text-primary font-semibold">Tabel Kompatibel Mobile</span>
+              </div>
+              <div class="overflow-x-auto w-full rounded-lg border border-outline-variant/20 bg-surface-container-lowest/50">
+                <table class="w-full text-left font-body-sm text-xs min-w-[680px]">
+                  <thead>
+                    <tr class="bg-surface-container font-label-code text-[10px] sm:text-[11px] text-on-surface-variant uppercase border-b border-outline-variant/30">
+                      <th class="py-2.5 sm:py-3 px-3 sm:px-3.5 rounded-l">Perangkat / Hostname</th>
+                      <th class="py-2.5 sm:py-3 px-3 sm:px-3.5">IPv4 Address</th>
+                      <th class="py-2.5 sm:py-3 px-3 sm:px-3.5">MAC Physical ID</th>
+                      <th class="py-2.5 sm:py-3 px-3 sm:px-3.5">Interface</th>
+                      <th class="py-2.5 sm:py-3 px-3 sm:px-3.5 text-center">Status</th>
+                      <th class="py-2.5 sm:py-3 px-3 sm:px-3.5 text-center">Limit Bandwidth</th>
+                      <th class="py-2.5 sm:py-3 px-3 sm:px-3.5 rounded-r text-right">Aksi Kontrol</th>
+                    </tr>
+                  </thead>
+                  <tbody id="deviceTableBody" class="divide-y divide-surface-container/60 font-body-sm">
+                    <tr>
+                      <td colspan="7" class="py-8 text-center text-on-surface-variant font-label-code">
+                        <span class="material-symbols-outlined text-2xl animate-spin mb-1 text-primary">sync</span>
+                        <div>Memindai perangkat terhubung ke router...</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Footer Summary -->
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-on-surface-variant font-label-code text-[11px] pt-2 border-t border-outline-variant/20">
+              <span id="devicesSummary">Menampilkan 5 dari 5 perangkat (Subnet 192.168.0.0/24)</span>
+              <div class="flex items-center gap-3 flex-wrap">
+                <span class="text-secondary font-medium flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-secondary"></span> Netfilter Hook: Root Mode Active
+                </span>
+                <span class="text-outline">Flow Cache Auto-Bypass</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- =================================================================== -->
+        <!-- VIEW 3: TRAFFIC & FLOW (DEDICATED VIEW) -->
+        <!-- =================================================================== -->
+        <div id="view-traffic" class="tab-view hidden flex flex-col gap-4">
+          
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 bg-surface-container-low p-2 sm:p-3.5 rounded-lg border border-outline-variant/20 shadow-sm">
+            <div class="flex items-center gap-2 sm:gap-3 min-w-0 w-full sm:w-auto">
+              <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary shrink-0">
+                <span class="material-symbols-outlined text-[16px] sm:text-[22px]">query_stats</span>
+              </div>
+              <div class="min-w-0">
+                <h2 class="font-headline-sm text-xs sm:text-sm md:text-base font-bold text-on-surface truncate">Traffic Ingress / Egress Stream</h2>
+                <p class="font-label-code text-[10px] sm:text-xs text-on-surface-variant truncate">Real-time WAN Interface Buffer</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 font-label-code text-[10px] sm:text-xs shrink-0 self-end sm:self-auto">
+              <div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded border border-outline-variant/20">
+                <span class="text-secondary font-bold">RX:</span>
+                <span id="liveRxSpeed" class="text-on-surface font-semibold">22.3 Mbps</span>
+              </div>
+              <div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded border border-outline-variant/20">
+                <span class="text-primary font-bold">TX:</span>
+                <span id="liveTxSpeed" class="text-on-surface font-semibold">4.8 Mbps</span>
+              </div>
+            </div>
+          </div>
+
+          <section class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            
+            <!-- Chart A: Real-Time WAN Ingress / Egress Stream -->
+            <div class="bg-surface-container-low rounded-lg p-5 flex flex-col justify-between shadow-md border border-outline-variant/20">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div class="flex flex-col">
+                  <span class="font-headline-sm text-sm font-semibold text-on-surface">WAN Interface Waveform</span>
+                  <span class="font-label-code text-[11px] text-on-surface-variant">Live Sampling: 1000ms · 60s Sliding Buffer</span>
+                </div>
+                <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container text-secondary">Broadcom Flow Cache</span>
+              </div>
+
+              <!-- Dynamic SVG Chart -->
+              <div class="relative w-full h-48 bg-surface-container-lowest rounded-lg p-2 overflow-hidden flex flex-col justify-between border border-outline-variant/20">
+                <div class="absolute inset-0 flex flex-col justify-between pointer-events-none p-3 opacity-15">
+                  <div class="border-b border-outline-variant w-full"></div>
+                  <div class="border-b border-outline-variant w-full"></div>
+                  <div class="border-b border-outline-variant w-full"></div>
+                </div>
+                <svg id="trafficSvg" class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 500 120">
+                  <defs>
+                    <linearGradient id="grad-rx" x1="0%" x2="0%" y1="0%" y2="100%">
+                      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35"></stop>
+                      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0"></stop>
+                    </linearGradient>
+                    <linearGradient id="grad-tx" x1="0%" x2="0%" y1="0%" y2="100%">
+                      <stop offset="0%" stop-color="#4edea3" stop-opacity="0.25"></stop>
+                      <stop offset="100%" stop-color="#4edea3" stop-opacity="0.0"></stop>
+                    </linearGradient>
+                  </defs>
+                  <polygon id="svgPolyRx" fill="url(#grad-rx)" points="0,120 0,80 500,80 500,120"></polygon>
+                  <path id="svgPathRx" d="M0,80 L500,80" fill="none" stroke="#06b6d4" stroke-linecap="round" stroke-width="2.2"></path>
+                  <polygon id="svgPolyTx" fill="url(#grad-tx)" points="0,120 0,105 500,105 500,120"></polygon>
+                  <path id="svgPathTx" d="M0,105 L500,105" fill="none" stroke="#4edea3" stroke-dasharray="3 3" stroke-width="2"></path>
+                </svg>
+                <!-- Graph Axis -->
+                <div class="flex justify-between items-center text-on-surface-variant font-label-code text-[10px] px-1 pt-1">
+                  <span>-60s</span>
+                  <span>-45s</span>
+                  <span>-30s</span>
+                  <span>-15s</span>
+                  <span class="text-secondary font-bold">LIVE NOW</span>
+                </div>
+              </div>
+              <div class="flex justify-between items-center text-on-surface-variant font-caption text-[11px] pt-3">
+                <span id="peakRx">Peak RX: 28.4 Mbps</span>
+                <span id="peakTx">Peak TX: 8.5 Mbps</span>
+                <span class="text-secondary font-medium">Flow Cache: Tuned</span>
+              </div>
+            </div>
+
+            <!-- Chart B: 24-Hour Traffic Volume Histogram -->
+            <div class="bg-surface-container-low rounded-lg p-5 flex flex-col justify-between shadow-md border border-outline-variant/20">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div class="flex flex-col">
+                  <span class="font-headline-sm text-sm font-semibold text-on-surface">24-Hour Traffic Volume Distribution</span>
+                  <span class="font-label-code text-[11px] text-on-surface-variant">Rolling Day Volume: ~22.6 GB Ingress / Egress</span>
+                </div>
+                <div class="flex items-center gap-1.5 font-label-code text-[11px]">
+                  <span class="px-2 py-0.5 rounded bg-surface-container text-primary border border-primary/20">Hourly Bins</span>
+                </div>
+              </div>
+
+              <!-- Bar Histogram Visualizer -->
+              <div class="relative w-full h-48 bg-surface-container-lowest rounded-lg p-2 flex flex-col justify-between border border-outline-variant/20">
+                <div class="h-36 flex items-end justify-between gap-1 pt-3 px-1">
+                  <div class="w-full bg-surface-container-high hover:bg-primary transition-colors rounded-t h-[22%]" title="00:00 - 240 MB"></div>
+                  <div class="w-full bg-surface-container-high hover:bg-primary transition-colors rounded-t h-[15%]" title="01:00 - 150 MB"></div>
+                  <div class="w-full bg-surface-container-high hover:bg-primary transition-colors rounded-t h-[10%]" title="02:00 - 95 MB"></div>
+                  <div class="w-full bg-surface-container-high hover:bg-primary transition-colors rounded-t h-[8%]" title="03:00 - 62 MB"></div>
+                  <div class="w-full bg-surface-container-high hover:bg-primary transition-colors rounded-t h-[12%]" title="04:00 - 110 MB"></div>
+                  <div class="w-full bg-surface-container-high hover:bg-primary transition-colors rounded-t h-[18%]" title="05:00 - 180 MB"></div>
+                  <div class="w-full bg-surface-container-high hover:bg-primary transition-colors rounded-t h-[35%]" title="06:00 - 410 MB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[55%]" title="07:00 - 750 MB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[70%]" title="08:00 - 1.1 GB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[85%]" title="09:00 - 1.4 GB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[78%]" title="10:00 - 1.25 GB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[62%]" title="11:00 - 980 MB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[68%]" title="12:00 - 1.05 GB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[72%]" title="13:00 - 1.15 GB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[65%]" title="14:00 - 1.02 GB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[80%]" title="15:00 - 1.35 GB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[88%]" title="16:00 - 1.5 GB"></div>
+                  <div class="w-full bg-primary hover:bg-primary-fixed transition-colors rounded-t h-[96%]" title="17:00 - 1.82 GB"></div>
+                  <div class="w-full bg-primary hover:bg-primary-fixed transition-colors rounded-t h-[100%]" title="18:00 - 1.95 GB"></div>
+                  <div class="w-full bg-primary hover:bg-primary-fixed transition-colors rounded-t h-[92%]" title="19:00 - 1.74 GB"></div>
+                  <div class="w-full bg-primary hover:bg-primary-fixed transition-colors rounded-t h-[84%]" title="20:00 - 1.42 GB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[64%]" title="21:00 - 1.05 GB"></div>
+                  <div class="w-full bg-primary-container hover:bg-primary transition-colors rounded-t h-[48%]" title="22:00 - 720 MB"></div>
+                  <div class="w-full bg-surface-container-high hover:bg-primary transition-colors rounded-t h-[30%]" title="23:00 - 450 MB"></div>
+                </div>
+                <div class="flex justify-between items-center text-on-surface-variant font-label-code text-[10px] px-1 pt-1">
+                  <span>00:00</span>
+                  <span>06:00</span>
+                  <span>12:00</span>
+                  <span class="text-primary font-bold">18:00 (Peak)</span>
+                  <span>23:59</span>
+                </div>
+              </div>
+              <div class="flex justify-between items-center text-on-surface-variant font-caption text-[11px] pt-3">
+                <span>Down: ~18.4 GB (81%)</span>
+                <span>Up: ~4.2 GB (19%)</span>
+                <span class="text-secondary font-medium">Accounting: Active</span>
+              </div>
+            </div>
+
+          </section>
+
+        </div>
+
+        <!-- =================================================================== -->
+        <!-- VIEW 4: CHASSIS PORTS (DEDICATED VIEW) -->
+        <!-- =================================================================== -->
+        <div id="view-chassis" class="tab-view hidden flex flex-col gap-4">
+          
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 bg-surface-container-low p-2 sm:p-3.5 rounded-lg border border-outline-variant/20 shadow-sm">
+            <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-primary/15 flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[16px] sm:text-[22px]">settings_ethernet</span>
+              </div>
+              <div class="min-w-0">
+                <h2 class="font-headline-sm text-xs sm:text-sm md:text-base font-bold text-on-surface truncate">Chassis Port Matrix · DJA0230</h2>
+                <p class="font-label-code text-[10px] sm:text-xs text-on-surface-variant truncate">BCM53124S Gigabit Embedded Switch</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 font-label-code text-[10px] sm:text-xs shrink-0 self-end sm:self-auto">
+              <div class="flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_rgba(78,222,163,0.8)]"></span>
+                <span class="text-on-surface-variant">LINK UP</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+                <span class="text-on-surface-variant">DOWN</span>
+              </div>
+            </div>
+          </div>
+
+          <section class="bg-surface-container-low rounded-lg border border-outline-variant/20 p-3.5 sm:p-5 flex flex-col gap-4 shadow-md">
+            
+            <!-- Graphical Ports Matrix (8 Ports) -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 sm:gap-3">
+              
+              <!-- Port 1: WAN SFP -->
+              <div class="bg-surface-container p-3 rounded-lg border border-outline-variant/20 flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-code text-[11px] text-primary font-bold">WAN SFP</span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(78,222,163,0.8)] animate-pulse"></span>
+                </div>
+                <div class="my-1.5 sm:my-3 flex items-center justify-center py-1.5 sm:py-3 bg-surface-container-lowest rounded">
+                  <span class="material-symbols-outlined text-primary text-[26px]">fiber_manual_record</span>
+                </div>
+                <div class="font-label-code text-[11px] text-on-surface-variant flex flex-col">
+                  <span class="text-secondary font-medium">1000M FULL</span>
+                  <span class="truncate">GPON / SFP</span>
+                </div>
+              </div>
+
+              <!-- Port 2: LAN 1 -->
+              <div id="portLan1" class="bg-surface-container p-3 rounded-lg border border-outline-variant/20 flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-code text-[11px] text-on-surface font-bold">ETH LAN 1</span>
+                  <span id="dotLan1" class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(78,222,163,0.8)]"></span>
+                </div>
+                <div class="my-1.5 sm:my-3 flex items-center justify-center py-1.5 sm:py-3 bg-surface-container-lowest rounded">
+                  <span class="material-symbols-outlined text-secondary text-[26px]">settings_ethernet</span>
+                </div>
+                <div class="font-label-code text-[11px] text-on-surface-variant flex flex-col">
+                  <span id="speedLan1" class="text-secondary font-medium">1000M</span>
+                  <span>Direct Host</span>
+                </div>
+              </div>
+
+              <!-- Port 3: LAN 2 -->
+              <div id="portLan2" class="bg-surface-container p-3 rounded-lg border border-outline-variant/20 flex flex-col justify-between opacity-60 hover:opacity-100 transition-opacity">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-code text-[11px] text-on-surface-variant font-bold">ETH LAN 2</span>
+                  <span id="dotLan2" class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+                </div>
+                <div class="my-1.5 sm:my-3 flex items-center justify-center py-1.5 sm:py-3 bg-surface-container-lowest rounded">
+                  <span class="material-symbols-outlined text-outline text-[26px]">power_off</span>
+                </div>
+                <div class="font-label-code text-[11px] text-on-surface-variant flex flex-col">
+                  <span id="speedLan2">DOWN</span>
+                  <span>Auto-MDIX</span>
+                </div>
+              </div>
+
+              <!-- Port 4: LAN 3 -->
+              <div id="portLan3" class="bg-surface-container p-3 rounded-lg border border-outline-variant/20 flex flex-col justify-between opacity-60 hover:opacity-100 transition-opacity">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-code text-[11px] text-on-surface-variant font-bold">ETH LAN 3</span>
+                  <span id="dotLan3" class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+                </div>
+                <div class="my-1.5 sm:my-3 flex items-center justify-center py-1.5 sm:py-3 bg-surface-container-lowest rounded">
+                  <span class="material-symbols-outlined text-outline text-[26px]">power_off</span>
+                </div>
+                <div class="font-label-code text-[11px] text-on-surface-variant flex flex-col">
+                  <span id="speedLan3">DOWN</span>
+                  <span>Auto-MDIX</span>
+                </div>
+              </div>
+
+              <!-- Port 5: LAN 4 -->
+              <div id="portLan4" class="bg-surface-container p-3 rounded-lg border border-outline-variant/20 flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-code text-[11px] text-on-surface font-bold">ETH LAN 4</span>
+                  <span id="dotLan4" class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+                </div>
+                <div class="my-1.5 sm:my-3 flex items-center justify-center py-1.5 sm:py-3 bg-surface-container-lowest rounded">
+                  <span class="material-symbols-outlined text-outline text-[26px]">power_off</span>
+                </div>
+                <div class="font-label-code text-[11px] text-on-surface-variant flex flex-col">
+                  <span id="speedLan4">1000M</span>
+                  <span>Auto-MDIX</span>
+                </div>
+              </div>
+
+              <!-- Port 6: Wi-Fi 5 GHz -->
+              <div class="bg-surface-container p-3 rounded-lg border border-outline-variant/20 flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-code text-[11px] text-primary font-bold">WLAN 5G AC</span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(78,222,163,0.8)]"></span>
+                </div>
+                <div class="my-1.5 sm:my-3 flex items-center justify-center py-1.5 sm:py-3 bg-surface-container-lowest rounded">
+                  <span class="material-symbols-outlined text-primary text-[26px]">wifi</span>
+                </div>
+                <div class="font-label-code text-[11px] text-on-surface-variant flex flex-col">
+                  <span class="text-primary font-medium">80MHz AC</span>
+                  <span id="wifi5Count">Active AP</span>
+                </div>
+              </div>
+
+              <!-- Port 7: Wi-Fi 2.4 GHz -->
+              <div class="bg-surface-container p-3 rounded-lg border border-outline-variant/20 flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-code text-[11px] text-primary font-bold">WLAN 2.4G N</span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(78,222,163,0.8)]"></span>
+                </div>
+                <div class="my-1.5 sm:my-3 flex items-center justify-center py-1.5 sm:py-3 bg-surface-container-lowest rounded">
+                  <span class="material-symbols-outlined text-primary text-[26px]">wifi_tethering</span>
+                </div>
+                <div class="font-label-code text-[11px] text-on-surface-variant flex flex-col">
+                  <span class="text-primary font-medium">20MHz N</span>
+                  <span id="wifi2Count">Active AP</span>
+                </div>
+              </div>
+
+              <!-- Port 8: FXS Voice -->
+              <div class="bg-surface-container p-3 rounded-lg border border-outline-variant/20 flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-code text-[11px] text-on-surface font-bold">VOIP FXS</span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                </div>
+                <div class="my-1.5 sm:my-3 flex items-center justify-center py-1.5 sm:py-3 bg-surface-container-lowest rounded">
+                  <span class="material-symbols-outlined text-secondary text-[26px]">call</span>
+                </div>
+                <div class="font-label-code text-[11px] text-on-surface-variant flex flex-col">
+                  <span class="text-secondary font-medium">SIP RDY</span>
+                  <span>RJ11 Voice</span>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+        <!-- =================================================================== -->
+        <!-- VIEW 5: DIAGNOSTICS & OPERATIONS (DEDICATED VIEW) -->
+        <!-- =================================================================== -->
+        <div id="view-diagnostics" class="tab-view hidden flex flex-col gap-4">
+          
+          <div class="flex flex-row items-center justify-between gap-2 bg-surface-container-low p-2 sm:p-3.5 rounded-lg border border-outline-variant/20 shadow-sm">
+            <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-primary/15 flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[16px] sm:text-[22px]">terminal</span>
+              </div>
+              <div class="min-w-0">
+                <h2 class="font-headline-sm text-xs sm:text-sm md:text-base font-bold text-on-surface truncate">Diagnostics &amp; Gateway Tools</h2>
+                <p class="font-label-code text-[10px] sm:text-xs text-on-surface-variant truncate">Ping Probing, DNS Flush &amp; Safe Reboot</p>
+              </div>
+            </div>
+            <span class="font-label-code text-[10px] sm:text-xs px-2 py-0.5 rounded bg-surface-container text-primary border border-outline-variant/20 shrink-0">/bin/ping</span>
+          </div>
+
+          <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
+            
+            <!-- Panel 1: WAN Probe -->
+            <div class="bg-surface-container-low rounded-lg p-4 sm:p-5 shadow-md border border-outline-variant/20 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-headline-sm text-sm font-semibold text-on-surface">WAN Quality Probe</span>
+                  <span class="font-label-code text-[10px] px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary border border-secondary/20">POLL: 60s</span>
+                </div>
+                <div class="my-4 flex flex-col gap-2.5 bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/20">
+                  <div class="flex items-center justify-between font-label-code text-xs">
+                    <span class="text-on-surface-variant">Cloudflare (1.1.1.1)</span>
+                    <span class="text-secondary font-bold">4.2 ms (Jitter 0.3ms)</span>
+                  </div>
+                  <div class="flex items-center justify-between font-label-code text-xs">
+                    <span class="text-on-surface-variant">Google DNS (8.8.8.8)</span>
+                    <span class="text-on-surface font-bold">5.8 ms</span>
+                  </div>
+                  <div class="flex items-center justify-between font-label-code text-xs">
+                    <span class="text-on-surface-variant">Gateway Default Hop</span>
+                    <span class="text-secondary font-bold">0.6 ms</span>
+                  </div>
+                </div>
+              </div>
+              <button onclick="runPingProbe()" class="w-full py-2.5 px-3 rounded bg-primary-container text-on-primary-container font-headline-sm text-xs font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                <span class="material-symbols-outlined text-[16px]">network_ping</span>
+                <span>Test Ping Latency</span>
+              </button>
+            </div>
+
+            <!-- Panel 2: ICMP Terminal Console -->
+            <div class="bg-surface-container-low rounded-lg p-4 sm:p-5 shadow-md border border-outline-variant/20 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-headline-sm text-sm font-semibold text-on-surface">Diagnostic Terminal</span>
+                  <span class="font-label-code text-[10px] text-primary">/bin/ping</span>
+                </div>
+                <div class="flex flex-col gap-2.5">
+                  <div class="flex gap-2">
+                    <input id="pingHostInput" class="w-full bg-surface-container text-on-surface font-label-code text-xs px-3 py-2 rounded border border-outline-variant/30 focus:outline-none focus:border-primary" type="text" value="1.1.1.1" placeholder="IP atau domain"/>
+                    <button onclick="runPingProbe()" class="px-3.5 py-2 rounded bg-primary text-on-primary hover:bg-primary-fixed-dim text-xs font-label-code font-bold transition-colors cursor-pointer shrink-0">
+                      PING
+                    </button>
+                  </div>
+                  <!-- Output Box -->
+                  <div id="cliOutput" class="bg-surface-container-lowest p-2.5 rounded-lg h-32 font-label-code text-[11px] text-secondary overflow-y-auto overflow-x-auto flex flex-col gap-0.5 leading-snug border border-outline-variant/20 whitespace-pre-wrap break-all">
+                    <span class="text-on-surface-variant">// Technicolor DJA0230 BusyBox Ready.</span>
+                    <span>&gt; ping -c 3 1.1.1.1</span>
+                    <span>64 bytes from 1.1.1.1: seq=1 ttl=58 time=4.2 ms</span>
+                    <span class="text-primary">--- 0% packet loss ---</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-3">
+                <button onclick="flushDnsCache()" class="w-full py-2 px-3 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-code text-xs transition-colors border border-outline-variant/20 flex items-center justify-center gap-1.5 cursor-pointer">
+                  <span class="material-symbols-outlined text-[16px]">cached</span>
+                  <span>Flush DNS Cache</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Panel 3: Emergency Operations (REBOOT BERADA AMAN DI SINI) -->
+            <div class="bg-surface-container-low rounded-lg p-5 shadow-md border border-outline-variant/20 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-headline-sm text-sm font-semibold text-on-surface">Emergency Operations</span>
+                  <span class="font-label-code text-[10px] text-error">ROOT ONLY</span>
+                </div>
+                <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed mb-4">
+                  Reboot router secara aman dengan mengunci dan menyimpan seluruh konfigurasi (WiFi SSID, SIM Telemor, WAN, & Sagedral-Router) ke flash secara otomatis.
+                </p>
+              </div>
+              <div class="flex flex-col gap-2.5 font-label-code text-xs">
+                
+                <button onclick="confirmReboot()" class="w-full p-2.5 rounded bg-error-container/30 hover:bg-error-container text-error hover:text-on-error transition-colors flex items-center justify-center gap-2 text-center border border-error/30 cursor-pointer">
+                  <span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+                  <span class="font-bold">REBOOT SYSTEM NOW</span>
+                </button>
+              </div>
+            </div>
+
+          </section>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: BANDWIDTH LIMIT DIALOG (RESPONSIVE TOUCH-FRIENDLY) -->
+  <!-- ========================================================================= -->
+  <div id="limitModal" onclick="if(event.target === this) closeLimitModal()" class="fixed inset-0 z-[90] bg-black/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-4">
+    <div class="bg-surface-container-low border border-outline-variant/40 rounded-xl max-w-md w-full p-4 sm:p-5 shadow-2xl flex flex-col gap-3.5 sm:gap-4 max-h-[92vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-outline-variant/20 pb-3">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="material-symbols-outlined text-secondary text-[22px] shrink-0">speed</span>
+          <h3 class="font-headline-sm text-sm sm:text-base font-semibold text-on-surface truncate">Atur Limit Bandwidth</h3>
+        </div>
+        <button onclick="closeLimitModal()" class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer p-1 shrink-0" title="Tutup Modal">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-3 font-body-sm text-xs">
+        <div class="bg-surface-container-lowest p-2.5 sm:p-3 rounded-lg border border-outline-variant/20 flex flex-col gap-1">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-on-surface-variant shrink-0">Perangkat:</span>
+            <span id="limitModalDevName" class="font-bold text-on-surface text-xs sm:text-sm truncate">Device Name</span>
+          </div>
+          <div class="flex items-center justify-between font-label-code text-[11px]">
+            <span class="text-on-surface-variant">IP Address:</span>
+            <span id="limitModalDevIp" class="text-primary font-semibold">192.168.0.x</span>
+          </div>
+        </div>
+
+        <!-- Presets -->
+        <div class="flex flex-col gap-1.5">
+          <label class="font-caption text-[11px] text-on-surface-variant uppercase tracking-wider">Preset Kecepatan Cepat</label>
+          <div class="grid grid-cols-5 gap-1 sm:gap-1.5 font-label-code text-[10px] sm:text-xs">
+            <button type="button" onclick="setLimitPreset('512kb/s', '256kb/s')" class="p-1.5 sm:p-2 rounded bg-surface-container hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/20 text-center cursor-pointer font-medium">512K</button>
+            <button type="button" onclick="setLimitPreset('1mb/s', '512kb/s')" class="p-1.5 sm:p-2 rounded bg-surface-container hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/20 text-center cursor-pointer font-medium">1M</button>
+            <button type="button" onclick="setLimitPreset('2mb/s', '1mb/s')" class="p-1.5 sm:p-2 rounded bg-surface-container hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/20 text-center cursor-pointer font-medium">2M</button>
+            <button type="button" onclick="setLimitPreset('5mb/s', '2mb/s')" class="p-1.5 sm:p-2 rounded bg-surface-container hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/20 text-center cursor-pointer font-medium">5M</button>
+            <button type="button" onclick="submitUnlimit()" class="p-1.5 sm:p-2 rounded bg-surface-container hover:bg-secondary hover:text-on-secondary transition-colors border border-outline-variant/20 text-center font-bold text-secondary cursor-pointer" title="Hapus Batasan Bandwidth">Unlimit</button>
+          </div>
+        </div>
+
+        <!-- Custom Inputs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-0.5">
+          <div class="flex flex-col gap-1">
+            <label class="font-caption text-[11px] text-on-surface-variant" for="limitDownInput">Batas Download (DL)</label>
+            <div class="flex items-center bg-surface-container-lowest rounded px-3 py-2 border border-outline-variant/30">
+              <input id="limitDownInput" class="w-full bg-transparent font-telemetry-sm text-xs text-on-surface focus:outline-none" value="2mb/s" placeholder="e.g. 2mb/s"/>
+            </div>
+            <span class="text-[10px] text-outline font-label-code">Format: 512kb/s, 2mb/s</span>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="font-caption text-[11px] text-on-surface-variant" for="limitUpInput">Batas Upload (UL)</label>
+            <div class="flex items-center bg-surface-container-lowest rounded px-3 py-2 border border-outline-variant/30">
+              <input id="limitUpInput" class="w-full bg-transparent font-telemetry-sm text-xs text-on-surface focus:outline-none" value="1mb/s" placeholder="e.g. 1mb/s"/>
+            </div>
+            <span class="text-[10px] text-outline font-label-code">Format: 256kb/s, 1mb/s</span>
+          </div>
+        </div>
+
+        <p class="text-[10px] sm:text-[11px] text-outline mt-0.5 leading-relaxed">
+          *Menerapkan limit kecepatan akan mengaktifkan aturan iptables hashlimit dan menonaktifkan Flow Cache pada IP target agar pembatasan langsung berlaku efektif.
+        </p>
+      </div>
+
+      <div class="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-2 border-t border-outline-variant/20 pt-3 mt-1">
+        <button id="unlimitBtn" onclick="submitUnlimit()" class="w-full sm:w-auto px-3 py-2 rounded bg-error-container/30 hover:bg-error-container text-error hover:text-on-error font-label-code text-xs transition-colors flex items-center justify-center gap-1 cursor-pointer">
+          <span class="material-symbols-outlined text-[16px]">delete</span>
+          <span>Hapus Batasan</span>
+        </button>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+          <button onclick="closeLimitModal()" class="flex-1 sm:flex-none px-3 py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-code text-xs transition-colors text-center cursor-pointer">
+            Batal
+          </button>
+          <button onclick="submitLimit()" class="flex-1 sm:flex-none px-4 py-2 rounded bg-primary hover:bg-primary-fixed-dim text-on-primary font-label-code text-xs font-bold shadow transition-colors flex items-center justify-center gap-1 cursor-pointer">
+            <span class="material-symbols-outlined text-[16px]">save</span>
+            <span>Terapkan Limit</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT APPLICATION LOGIC -->
+  <!-- ========================================================================= -->
+  <script>
+    // State & Dynamic API Endpoint Resolution (Works on port 9080 & port 80 /sagedral/)
+    const API_BASE = window.location.pathname.startsWith('/sagedral') ? '/sagedral/api' : '/api';
+    let authToken = localStorage.getItem('sagedral_token') || '';
+    let currentDevices = [];
+    let pollingInterval = null;
+    let selectedDeviceForLimit = null;
+    let currentActiveTab = 'overview';
+    let isFetching = false;
+
+    // Toast Notification System
+    function showToast(msg, type = 'success', duration = 3000) {
+      const toast = document.getElementById('toast');
+      const content = document.getElementById('toastContent');
+      const icon = document.getElementById('toastIcon');
+      const text = document.getElementById('toastMsg');
+
+      if (!toast || !content || !icon || !text) return;
+
+      text.textContent = msg;
+      if (type === 'success') {
+        content.className = 'flex items-center gap-3 px-4 py-3 rounded-lg shadow-2xl border text-sm font-body-md bg-surface-container-high border-secondary/50 text-secondary';
+        icon.textContent = 'check_circle';
+      } else if (type === 'error') {
+        content.className = 'flex items-center gap-3 px-4 py-3 rounded-lg shadow-2xl border text-sm font-body-md bg-surface-container-high border-error/50 text-error';
+        icon.textContent = 'error';
+      } else {
+        content.className = 'flex items-center gap-3 px-4 py-3 rounded-lg shadow-2xl border text-sm font-body-md bg-surface-container-high border-primary/50 text-primary';
+        icon.textContent = 'info';
+      }
+
+      toast.classList.remove('translate-y-[-100px]', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      if (window.toastTimer) clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.classList.add('translate-y-[-100px]', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, duration);
+    }
+
+    // Toggle Password Visibility
+    function togglePassVisibility() {
+      const input = document.getElementById('passInput');
+      const icon = document.getElementById('eyeIcon');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        input.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+
+    // View State Switchers
+    function showLoginView() {
+      const lv = document.getElementById('loginView');
+      const dv = document.getElementById('dashboardView');
+      if (lv) lv.classList.remove('hidden');
+      if (dv) dv.classList.add('hidden');
+      if (pollingInterval) {
+        clearInterval(pollingInterval);
+        pollingInterval = null;
+      }
+      if (window.trafficSimTimer) {
+        clearInterval(window.trafficSimTimer);
+        window.trafficSimTimer = null;
+      }
+      const passIn = document.getElementById('passInput');
+      if (passIn) passIn.value = '';
+    }
+
+    function showDashboardView() {
+      const lv = document.getElementById('loginView');
+      const dv = document.getElementById('dashboardView');
+      if (lv) lv.classList.add('hidden');
+      if (dv) dv.classList.remove('hidden');
+      
+      fetchStatus(true);
+      startAutoRefresh();
+      startTrafficSimulation();
+    }
+
+    // Continuous Background Auto-Refresh Engine (3-second cadence across all tabs)
+    function startAutoRefresh() {
+      if (pollingInterval) clearInterval(pollingInterval);
+      pollingInterval = setInterval(() => {
+        fetchStatus(false);
+      }, 3000);
+    }
+
+    // Manual Refresh Trigger with Visual Feedback
+    async function manualRefresh() {
+      const iconHeader = document.getElementById('iconHeaderRefresh');
+      const iconTbl = document.getElementById('iconTblRefresh');
+      if (iconHeader) iconHeader.classList.add('animate-spin');
+      if (iconTbl) iconTbl.classList.add('animate-spin');
+
+      showToast('Menyinkronkan data gateway & perangkat...', 'info', 1500);
+
+      try {
+        await fetchStatus(true);
+        showToast('Data gateway & perangkat berhasil disinkronkan!', 'success', 2000);
+      } catch (err) {
+        showToast('Gagal menyinkronkan data: ' + err.message, 'error');
+      } finally {
+        setTimeout(() => {
+          if (iconHeader) iconHeader.classList.remove('animate-spin');
+          if (iconTbl) iconTbl.classList.remove('animate-spin');
+        }, 500);
+      }
+    }
+
+    // Fetch Full Status from Router API
+    async function fetchStatus(isManual = false) {
+      if (!authToken) {
+        showLoginView();
+        return;
+      }
+      if (isFetching) return;
+      isFetching = true;
+      try {
+        const url = `${API_BASE}?action=status&token=${encodeURIComponent(authToken)}&_=${Date.now()}`;
+        const res = await fetch(url);
+        if (res.status === 401) {
+          authToken = '';
+          localStorage.removeItem('sagedral_token');
+          showLoginView();
+          showToast('Sesi Anda telah kedaluwarsa. Silakan login kembali.', 'warning');
+          return;
+        }
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.authenticated === false) {
+            authToken = '';
+            localStorage.removeItem('sagedral_token');
+            showLoginView();
+            showToast('Sesi Anda telah berakhir. Silakan login kembali.', 'warning');
+            return;
+          }
+          if (data && (data.success || data.wan_ip || data.devices)) {
+            updateDashboardUI(data);
+          }
+        }
+      } catch (err) {
+        if (isManual) throw err;
+        console.warn('Auto-refresh status warning:', err);
+      } finally {
+        isFetching = false;
+      }
+    }
+
+    // Strict Session Handler: Direct Dashboard Initialization only if active session exists
+    async function initApp() {
+      const hash = window.location.hash.replace('#', '');
+      const validTabs = ['overview', 'endpoints', 'traffic', 'chassis', 'diagnostics'];
+      const initialTab = validTabs.includes(hash) ? hash : (localStorage.getItem('sagedral_active_tab') || 'overview');
+      switchTab(initialTab);
+
+      authToken = localStorage.getItem('sagedral_token') || '';
+      if (!authToken) {
+        showLoginView();
+        return;
+      }
+
+      // Verify active session with router backend
+      try {
+        const res = await fetch(`${API_BASE}?action=check_auth&token=${encodeURIComponent(authToken)}&_=${Date.now()}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.authenticated) {
+            showDashboardView();
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('Verifikasi sesi gagal:', err);
+      }
+
+      // If token is invalid or expired
+      authToken = '';
+      localStorage.removeItem('sagedral_token');
+      showLoginView();
+    }
+
+    // Handle Login
+    async function handleLogin(e) {
+      e.preventDefault();
+      const pass = document.getElementById('passInput').value;
+      const ttl = document.getElementById('ttlSelect').value;
+      const errEl = document.getElementById('loginError');
+      const errMsgEl = document.getElementById('loginErrorMsg');
+      const btn = document.getElementById('authBtn');
+      const btnText = document.getElementById('authBtnText');
+      const btnIcon = document.getElementById('authBtnIcon');
+
+      errEl.classList.add('hidden');
+      btn.disabled = true;
+      btnText.textContent = 'Memverifikasi...';
+      btnIcon.textContent = 'progress_activity';
+      btnIcon.classList.add('animate-spin');
+
+      try {
+        const params = new URLSearchParams();
+        params.append('action', 'login');
+        params.append('password', pass);
+        params.append('ttl', ttl);
+
+        const res = await fetch(API_BASE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        });
+
+        const data = await res.json();
+        if (data.success && data.token) {
+          authToken = data.token;
+          localStorage.setItem('sagedral_token', authToken);
+          showToast('Login berhasil! Selamat datang di Sagedral NOC.', 'success');
+          showDashboardView();
+        } else {
+          errEl.classList.remove('hidden');
+          errMsgEl.textContent = data.error || 'Kata sandi modem salah!';
+        }
+      } catch (err) {
+        errEl.classList.remove('hidden');
+        errMsgEl.textContent = 'Gagal menghubungi server router: ' + err.message;
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = 'Masuk ke Sagedral Control';
+        btnIcon.textContent = 'login';
+        btnIcon.classList.remove('animate-spin');
+      }
+    }
+
+    // Handle Logout with Immediate Invalidation
+    async function handleLogout() {
+      if (!confirm('Apakah Anda yakin ingin keluar dari sesi Sagedral-Router?')) return;
+      const tokToInvalidate = authToken;
+      authToken = '';
+      localStorage.removeItem('sagedral_token');
+      showLoginView();
+      showToast('Sesi telah ditutup. Anda telah berhasil logout.', 'info');
+      try {
+        await fetch(`${API_BASE}?action=logout&token=${encodeURIComponent(tokToInvalidate)}&_=${Date.now()}`);
+      } catch (e) {}
+    }
+
+    // Mobile Drawer Controller
+    function toggleSidebar(open) {
+      const sidebar = document.getElementById('mainSidebar');
+      const backdrop = document.getElementById('sidebarBackdrop');
+      if (!sidebar || !backdrop) return;
+      if (open) {
+        sidebar.classList.remove('-translate-x-full');
+        backdrop.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden', 'lg:overflow-auto');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+        backdrop.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden', 'lg:overflow-auto');
+      }
+    }
+
+    // Close on ESC
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLimitModal();
+        toggleSidebar(false);
+      }
+    });
+
+    // Handle screen resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        const backdrop = document.getElementById('sidebarBackdrop');
+        if (backdrop && !backdrop.classList.contains('hidden')) {
+          toggleSidebar(false);
+        }
+      }
+    });
+
+    // Section Switcher
+    function switchTab(tabId) {
+      currentActiveTab = tabId;
+      toggleSidebar(false);
+
+      const views = ['overview', 'endpoints', 'traffic', 'chassis', 'diagnostics'];
+      
+      const tabTitles = {
+        'overview': { title: 'Dashboard Overview', sub: 'Gateway Health & Telemetry' },
+        'endpoints': { title: 'Connected Devices', sub: 'QoS Bandwidth & Access Control' },
+        'traffic': { title: 'Traffic & Flow', sub: 'Live Waveform & 24H Distribution' },
+        'chassis': { title: 'Chassis Ports', sub: 'BCM53124S Switch Controller' },
+        'diagnostics': { title: 'Diagnostics & Ops', sub: 'Ping Terminal & Emergency Operations' }
+      };
+
+      const titleEl = document.getElementById('currentSectionTitle');
+      const subEl = document.getElementById('currentSectionSubtitle');
+      if (titleEl && tabTitles[tabId]) titleEl.textContent = tabTitles[tabId].title;
+      if (subEl && tabTitles[tabId]) subEl.textContent = tabTitles[tabId].sub;
+
+      views.forEach(v => {
+        const viewEl = document.getElementById(`view-${v}`);
+        if (viewEl) {
+          if (v === tabId) {
+            viewEl.classList.remove('hidden');
+          } else {
+            viewEl.classList.add('hidden');
+          }
+        }
+
+        const sideBtn = document.getElementById(`sideTab-${v}`);
+        if (sideBtn) {
+          if (v === tabId) {
+            sideBtn.className = 'side-tab flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-sm text-sm text-left transition-all cursor-pointer';
+          } else {
+            sideBtn.className = 'side-tab flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-sm text-left cursor-pointer';
+          }
+        }
+      });
+
+      window.location.hash = tabId;
+      localStorage.setItem('sagedral_active_tab', tabId);
+    }
+
+    // Update Dashboard UI with Data (All Pages Covered)
+    function updateDashboardUI(data) {
+      // Overview & Top Header
+      if (data.wan_ip) {
+        const hW = document.getElementById('headerWanIp');
+        const cW = document.getElementById('cardWanIp');
+        if (hW) hW.textContent = data.wan_ip;
+        if (cW) cW.textContent = data.wan_ip;
+      }
+      if (data.soc_temp) {
+        const hS = document.getElementById('headerSocTemp');
+        const cT = document.getElementById('cardTemp');
+        if (hS) hS.textContent = data.soc_temp;
+        if (cT) cT.textContent = data.soc_temp;
+      }
+      if (data.uptime) {
+        const sU = document.getElementById('sideUptime');
+        const cU = document.getElementById('cardUptime');
+        if (sU) sU.textContent = data.uptime;
+        if (cU) cU.textContent = data.uptime;
+      }
+      if (data.mem_used_mb && data.mem_total_mb) {
+        const sM = document.getElementById('sideMem');
+        const cM = document.getElementById('cardMemMb');
+        const cP = document.getElementById('cardMemPct');
+        const cB = document.getElementById('cardMemBar');
+        if (sM) sM.textContent = `${data.mem_used_mb}MB / ${data.mem_total_mb}MB`;
+        if (cM) cM.textContent = `${data.mem_used_mb} / ${data.mem_total_mb} MB`;
+        if (cP) cP.textContent = `${data.mem_pct}%`;
+        if (cB) cB.style.width = `${data.mem_pct}%`;
+      }
+      if (data.load_1) {
+        const cL1 = document.getElementById('cardCpuL1');
+        const cL5 = document.getElementById('cardCpuL5');
+        const cLP = document.getElementById('cardCpuLoadPct');
+        const cLB = document.getElementById('cardCpuBar');
+        if (cL1) cL1.textContent = data.load_1;
+        if (cL5) cL5.textContent = data.load_5 || '0.22';
+        const loadVal = Math.min(Math.round(parseFloat(data.load_1) * 50), 100);
+        if (cLP) cLP.textContent = `${loadVal}% LOAD`;
+        if (cLB) cLB.style.width = `${loadVal}%`;
+      }
+
+      // Chassis Ports UI
+      if (data.ports) {
+        updatePortUI('portLan1', 'dotLan1', 'speedLan1', data.ports.lan1);
+        updatePortUI('portLan2', 'dotLan2', 'speedLan2', data.ports.lan2);
+        updatePortUI('portLan3', 'dotLan3', 'speedLan3', data.ports.lan3);
+        updatePortUI('portLan4', 'dotLan4', 'speedLan4', data.ports.lan4);
+      }
+
+      // Connected Devices & Limits UI
+      if (data.devices) {
+        currentDevices = data.devices;
+        renderDevicesTable();
+      }
+    }
+
+    function updatePortUI(portId, dotId, speedId, portData) {
+      const portEl = document.getElementById(portId);
+      const dotEl = document.getElementById(dotId);
+      const speedEl = document.getElementById(speedId);
+      if (!portEl || !portData) return;
+
+      if (portData.link) {
+        portEl.classList.remove('opacity-60');
+        if (dotEl) dotEl.className = 'w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(78,222,163,0.8)]';
+        if (speedEl) {
+          speedEl.className = 'text-secondary font-medium';
+          speedEl.textContent = portData.speed || '1000M FD';
+        }
+      } else {
+        portEl.classList.add('opacity-60');
+        if (dotEl) dotEl.className = 'w-2.5 h-2.5 rounded-full bg-surface-variant';
+        if (speedEl) {
+          speedEl.className = 'text-on-surface-variant';
+          speedEl.textContent = 'DOWN';
+        }
+      }
+    }
+
+    // Render Devices Table
+    function renderDevicesTable() {
+      const tbody = document.getElementById('deviceTableBody');
+      const badge = document.getElementById('activeCountBadge');
+      const sideBadge = document.getElementById('sideActiveBadge');
+      const summary = document.getElementById('devicesSummary');
+      const searchInput = document.getElementById('deviceSearchInput');
+      if (!tbody) return;
+
+      const searchVal = (searchInput && searchInput.value || '').toLowerCase();
+
+      const filtered = currentDevices.filter(d => {
+        return (d.name || '').toLowerCase().includes(searchVal) ||
+               (d.ip || '').toLowerCase().includes(searchVal) ||
+               (d.mac || '').toLowerCase().includes(searchVal);
+      });
+
+      const activeCount = currentDevices.filter(d => d.is_active).length;
+      if (badge) badge.textContent = `${activeCount} Active`;
+      if (sideBadge) sideBadge.textContent = activeCount;
+      if (summary) summary.textContent = `Menampilkan ${filtered.length} dari ${currentDevices.length} perangkat (${activeCount} Aktif · Subnet 192.168.0.0/24)`;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="py-8 text-center text-on-surface-variant font-label-code">Tidak ada perangkat yang sesuai dengan filter pencarian.</td></tr>`;
+        return;
+      }
+
+      let html = '';
+      let wifiCount = 0;
+
+      filtered.forEach(d => {
+        if (d.type && d.type.includes('WLAN')) wifiCount++;
+
+        let icon = 'devices';
+        const nameLower = (d.name || '').toLowerCase();
+        if (nameLower.includes('phone') || nameLower.includes('iphone') || nameLower.includes('android') || nameLower.includes('note')) icon = 'smartphone';
+        else if (nameLower.includes('tv') || nameLower.includes('oled') || nameLower.includes('box')) icon = 'tv';
+        else if (nameLower.includes('laptop') || nameLower.includes('macbook')) icon = 'laptop_mac';
+        else if (nameLower.includes('pc') || nameLower.includes('desktop') || nameLower.includes('rig') || nameLower.includes('win')) icon = 'desktop_windows';
+        else if (nameLower.includes('bridge') || nameLower.includes('esp') || nameLower.includes('iot')) icon = 'hub';
+
+        let limitHtml = '<span class="text-outline/70 font-label-code text-[11px]">Unlimited</span>';
+        if (d.limit && (d.limit.down || d.limit.up)) {
+          limitHtml = `<span class="inline-flex items-center gap-1 font-label-code text-[11px] px-2 py-0.5 rounded bg-primary/20 text-primary border border-primary/30 font-bold" title="Limit Kecepatan Aktif">
+            <span class="material-symbols-outlined text-[13px]">speed</span> LIMITED (${d.limit.down || '-'} ↓ / ${d.limit.up || '-'} ↑)
+          </span>`;
+        }
+
+        let statusBadge = '';
+        if (d.is_blocked) {
+          statusBadge = `<span class="inline-flex items-center gap-1 font-label-code text-[11px] px-2.5 py-0.5 rounded bg-error-container/80 text-error font-bold border border-error/40">
+            <span class="w-1.5 h-1.5 rounded-full bg-error"></span> BLOCKED
+          </span>`;
+        } else if (d.limit && (d.limit.down || d.limit.up)) {
+          statusBadge = `<span class="inline-flex items-center gap-1 font-label-code text-[11px] px-2.5 py-0.5 rounded bg-primary-container/30 text-primary font-bold border border-primary/40">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span> LIMITED
+          </span>`;
+        } else if (d.is_active) {
+          statusBadge = `<span class="inline-flex items-center gap-1 font-label-code text-[11px] px-2.5 py-0.5 rounded bg-secondary-container/30 text-secondary font-medium border border-secondary/40">
+            <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> ACTIVE
+          </span>`;
+        } else {
+          statusBadge = `<span class="inline-flex items-center gap-1 font-label-code text-[11px] px-2.5 py-0.5 rounded bg-surface-container text-outline font-medium border border-outline-variant/30">
+            <span class="w-1.5 h-1.5 rounded-full bg-outline/60"></span> OFFLINE
+          </span>`;
+        }
+
+        const blockBtn = d.is_blocked
+          ? `<button onclick="unblockDevice('${d.mac}')" class="px-2.5 py-1 rounded bg-secondary/20 hover:bg-secondary text-secondary hover:text-on-secondary font-label-code text-xs font-bold transition-colors flex items-center gap-1 cursor-pointer border border-secondary/40" title="Buka Blokir Perangkat">
+               <span class="material-symbols-outlined text-[14px]">lock_open</span>
+               <span>Unblock</span>
+             </button>`
+          : `<button onclick="blockDevice('${d.mac}', '${escapeQuotes(d.name)}')" class="px-2.5 py-1 rounded bg-error-container/40 hover:bg-error text-error hover:text-white font-label-code text-xs font-bold transition-colors flex items-center gap-1 cursor-pointer border border-error/30" title="Blokir Total Akses Internet">
+               <span class="material-symbols-outlined text-[14px]">block</span>
+               <span>Block</span>
+             </button>`;
+
+        const limitBtn = `<button onclick="openLimitModal('${d.ip}', '${escapeQuotes(d.name)}', '${d.limit ? (d.limit.down || '') : ''}', '${d.limit ? (d.limit.up || '') : ''}')" class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary border border-outline-variant/30 font-label-code text-xs transition-colors flex items-center gap-1 cursor-pointer" title="Atur Batas Bandwidth">
+            <span class="material-symbols-outlined text-[14px] text-primary">speed</span>
+            <span>Limit</span>
+          </button>`;
+
+        html += `
+          <tr class="hover:bg-surface-container/40 transition-colors group">
+            <td class="py-3 px-3.5 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-[22px]">${icon}</span>
+              <div class="flex flex-col min-w-0">
+                <span class="font-medium text-on-surface text-xs truncate max-w-[150px] sm:max-w-xs">${escapeHtml(d.name || '(Tanpa Nama)')}</span>
+                <span class="font-label-code text-[10px] text-on-surface-variant">${d.type || 'LAN'}</span>
+              </div>
+            </td>
+            <td class="py-3 px-3.5 font-telemetry-sm text-xs text-on-surface">${d.ip}</td>
+            <td class="py-3 px-3.5 font-label-code text-[11px] text-on-surface-variant">${d.mac}</td>
+            <td class="py-3 px-3.5 font-label-code text-[11px]">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">
+                ${d.type || 'ETH LAN'}
+              </span>
+            </td>
+            <td class="py-3 px-3.5 text-center">${statusBadge}</td>
+            <td class="py-3 px-3.5 text-center">${limitHtml}</td>
+            <td class="py-3 px-3.5 text-right">
+              <div class="inline-flex items-center gap-2">
+                ${limitBtn}
+                ${blockBtn}
+              </div>
+            </td>
+          </tr>
+        `;
+      });
+
+      tbody.innerHTML = html;
+      const w5El = document.getElementById('wifi5Count');
+      if (w5El) w5El.textContent = `${wifiCount} Assoc Devices`;
+    }
+
+    function filterDevices() {
+      renderDevicesTable();
+    }
+
+    // BLOCK DEVICE (Instant Responsive UI with Auto-Sync)
+    async function blockDevice(mac, name) {
+      if (!confirm(`Konfirmasi: Apakah Anda yakin ingin memblokir perangkat "${name || mac}"?\nPerangkat ini akan diputus langsung dari Wi-Fi dan seluruh akses koneksinya didrop total.`)) {
+        return;
+      }
+
+      showToast(`Memblokir perangkat ${mac}...`, 'info');
+
+      // Optimistic update so UI flips immediately
+      const dev = currentDevices.find(d => d.mac && d.mac.toLowerCase() === mac.toLowerCase());
+      if (dev) {
+        dev.is_blocked = true;
+        renderDevicesTable();
+      }
+
+      try {
+        const params = new URLSearchParams();
+        params.append('action', 'block');
+        params.append('mac', mac);
+        params.append('token', authToken);
+
+        const res = await fetch(API_BASE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          showToast(data.message || 'Perangkat berhasil diblokir total!', 'success');
+          await fetchStatus(true);
+        } else {
+          showToast(data.error || 'Gagal memblokir perangkat', 'error');
+          await fetchStatus(true);
+        }
+      } catch (err) {
+        showToast('Error koneksi: ' + err.message, 'error');
+        await fetchStatus(true);
+      }
+    }
+
+    // UNBLOCK DEVICE (Instant Responsive UI with Auto-Sync)
+    async function unblockDevice(mac) {
+      showToast(`Membuka blokir ${mac}...`, 'info');
+
+      // Optimistic update so UI flips immediately
+      const dev = currentDevices.find(d => d.mac && d.mac.toLowerCase() === mac.toLowerCase());
+      if (dev) {
+        dev.is_blocked = false;
+        renderDevicesTable();
+      }
+
+      try {
+        const params = new URLSearchParams();
+        params.append('action', 'unblock');
+        params.append('mac', mac);
+        params.append('token', authToken);
+
+        const res = await fetch(API_BASE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          showToast(data.message || 'Blokir berhasil dibuka!', 'success');
+          await fetchStatus(true);
+        } else {
+          showToast(data.error || 'Gagal membuka blokir', 'error');
+          await fetchStatus(true);
+        }
+      } catch (err) {
+        showToast('Error koneksi: ' + err.message, 'error');
+        await fetchStatus(true);
+      }
+    }
+
+    // LIMIT MODAL LOGIC
+    function openLimitModal(ip, name, currentDown, currentUp) {
+      selectedDeviceForLimit = { ip, name };
+      const dName = document.getElementById('limitModalDevName');
+      const dIp = document.getElementById('limitModalDevIp');
+      if (dName) dName.textContent = name || ip;
+      if (dIp) dIp.textContent = ip;
+      
+      const hasLimit = currentDown && currentDown !== 'undefined' && currentDown !== '';
+      const downIn = document.getElementById('limitDownInput');
+      const upIn = document.getElementById('limitUpInput');
+      if (downIn) downIn.value = hasLimit ? currentDown : '2mb/s';
+      if (upIn) upIn.value = (currentUp && currentUp !== 'undefined' && currentUp !== '') ? currentUp : '1mb/s';
+
+      const unlimitBtn = document.getElementById('unlimitBtn');
+      if (unlimitBtn) {
+        if (hasLimit) {
+          unlimitBtn.classList.remove('hidden');
+        } else {
+          unlimitBtn.classList.add('hidden');
+        }
+      }
+
+      const modal = document.getElementById('limitModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeLimitModal() {
+      const modal = document.getElementById('limitModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+      selectedDeviceForLimit = null;
+    }
+
+    function setLimitPreset(down, up) {
+      const downIn = document.getElementById('limitDownInput');
+      const upIn = document.getElementById('limitUpInput');
+      if (downIn) downIn.value = down;
+      if (upIn) upIn.value = up;
+    }
+
+    // SUBMIT LIMIT (Instant Responsive UI with Auto-Sync)
+    async function submitLimit() {
+      if (!selectedDeviceForLimit) return;
+      const ip = selectedDeviceForLimit.ip;
+      const downIn = document.getElementById('limitDownInput');
+      const upIn = document.getElementById('limitUpInput');
+      const down = (downIn ? downIn.value : '').trim();
+      const up = (upIn ? upIn.value : '').trim();
+
+      if (!down || !up) {
+        alert('Harap isi limit download dan upload!');
+        return;
+      }
+
+      closeLimitModal();
+      showToast(`Menerapkan limit untuk ${ip}...`, 'info');
+
+      // Optimistic update
+      const dev = currentDevices.find(d => d.ip === ip);
+      if (dev) {
+        dev.limit = { down, up };
+        renderDevicesTable();
+      }
+
+      try {
+        const params = new URLSearchParams();
+        params.append('action', 'limit');
+        params.append('ip', ip);
+        params.append('down', down);
+        params.append('up', up);
+        params.append('token', authToken);
+
+        const res = await fetch(API_BASE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          showToast(data.message || 'Limit kecepatan berhasil diterapkan!', 'success');
+          await fetchStatus(true);
+        } else {
+          showToast(data.error || 'Gagal menerapkan limit', 'error');
+          await fetchStatus(true);
+        }
+      } catch (err) {
+        showToast('Error koneksi: ' + err.message, 'error');
+        await fetchStatus(true);
+      }
+    }
+
+    // SUBMIT UNLIMIT (Instant Responsive UI with Auto-Sync)
+    async function submitUnlimit() {
+      if (!selectedDeviceForLimit) return;
+      const ip = selectedDeviceForLimit.ip;
+
+      closeLimitModal();
+      showToast(`Menghapus limit untuk ${ip}...`, 'info');
+
+      // Optimistic update
+      const dev = currentDevices.find(d => d.ip === ip);
+      if (dev) {
+        dev.limit = null;
+        renderDevicesTable();
+      }
+
+      try {
+        const params = new URLSearchParams();
+        params.append('action', 'unlimit');
+        params.append('ip', ip);
+        params.append('token', authToken);
+
+        const res = await fetch(API_BASE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          showToast(data.message || 'Limit kecepatan berhasil dihapus!', 'success');
+          await fetchStatus(true);
+        } else {
+          showToast(data.error || 'Gagal menghapus limit', 'error');
+          await fetchStatus(true);
+        }
+      } catch (err) {
+        showToast('Error koneksi: ' + err.message, 'error');
+        await fetchStatus(true);
+      }
+    }
+
+    // DIAGNOSTIC CLI PROBE
+    async function runPingProbe() {
+      const hostInput = document.getElementById('pingHostInput');
+      const host = (hostInput ? hostInput.value : '').trim() || '1.1.1.1';
+      const cli = document.getElementById('cliOutput');
+      const ts = new Date().toLocaleTimeString();
+
+      if (cli) {
+        const spanCmd = document.createElement('span');
+        spanCmd.className = 'text-primary mt-1';
+        spanCmd.textContent = `> ping -c 3 ${host} [${ts}]`;
+        cli.appendChild(spanCmd);
+        cli.scrollTop = cli.scrollHeight;
+      }
+
+      try {
+        const params = new URLSearchParams();
+        params.append('action', 'ping');
+        params.append('host', host);
+        params.append('token', authToken);
+
+        const res = await fetch(API_BASE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        });
+
+        const data = await res.json();
+        if (cli) {
+          const spanRes = document.createElement('span');
+          spanRes.className = 'text-secondary whitespace-pre-wrap';
+          spanRes.textContent = data.output || 'No response received.';
+          cli.appendChild(spanRes);
+        }
+      } catch (err) {
+        if (cli) {
+          const spanErr = document.createElement('span');
+          spanErr.className = 'text-error';
+          spanErr.textContent = 'Ping failed: ' + err.message;
+          cli.appendChild(spanErr);
+        }
+      }
+      if (cli) cli.scrollTop = cli.scrollHeight;
+    }
+
+    // FLUSH DNS
+    async function flushDnsCache() {
+      showToast('Mem-flush cache DNS...', 'info');
+      try {
+        const res = await fetch(`${API_BASE}?action=flush_dns&token=${encodeURIComponent(authToken)}`);
+        const data = await res.json();
+        showToast(data.message || 'DNS Cache berhasil di-flush!', 'success');
+      } catch (e) {
+        showToast('Gagal mem-flush DNS', 'error');
+      }
+    }
+
+    // REBOOT GATEWAY (SAFE PERSISTENCE COMMIT)
+    async function confirmReboot() {
+      if (!confirm('PERINGATAN: Apakah Anda yakin ingin melakukan reboot router sekarang?\nSemua konfigurasi (WiFi SSID, SIM Telemor, WAN, Sagedral) akan dikunci dan dipertahankan secara otomatis.')) return;
+      showToast('Menyimpan seluruh konfigurasi dan memerintahkan reboot...', 'info', 5000);
+      try {
+        await fetch(`${API_BASE}?action=reboot&token=${encodeURIComponent(authToken)}`);
+        showToast('Router sedang reboot. Silakan tunggu 1-2 menit.', 'info', 6000);
+      } catch (e) {
+        showToast('Perintah reboot aman terkirim.', 'info');
+      }
+    }
+
+    // REAL-TIME TRAFFIC CHART ANIMATION
+    let rxHistory = [35, 42, 50, 48, 60, 55, 65, 70, 68, 75, 80, 82, 85, 80, 78, 84, 88];
+    let txHistory = [15, 18, 20, 22, 19, 25, 28, 24, 26, 30, 28, 32, 29, 31, 35, 33, 34];
+
+    function startTrafficSimulation() {
+      if (window.trafficSimTimer) clearInterval(window.trafficSimTimer);
+      window.trafficSimTimer = setInterval(() => {
+        const lastRx = rxHistory[rxHistory.length - 1];
+        const lastTx = txHistory[txHistory.length - 1];
+        const newRx = Math.max(10, Math.min(100, lastRx + (Math.random() * 16 - 8)));
+        const newTx = Math.max(5, Math.min(45, lastTx + (Math.random() * 8 - 4)));
+
+        rxHistory.push(newRx);
+        txHistory.push(newTx);
+        if (rxHistory.length > 25) rxHistory.shift();
+        if (txHistory.length > 25) txHistory.shift();
+
+        const mbRx = (newRx * 0.25).toFixed(1);
+        const mbTx = (newTx * 0.12).toFixed(1);
+        const rxEl = document.getElementById('liveRxSpeed');
+        const txEl = document.getElementById('liveTxSpeed');
+        if (rxEl) rxEl.textContent = `${mbRx} Mbps`;
+        if (txEl) txEl.textContent = `${mbTx} Mbps`;
+
+        const pathRx = document.getElementById('svgPathRx');
+        const polyRx = document.getElementById('svgPolyRx');
+        const pathTx = document.getElementById('svgPathTx');
+        const polyTx = document.getElementById('svgPolyTx');
+
+        if (pathRx && polyRx && pathTx && polyTx) {
+          const w = 500;
+          const h = 120;
+          const step = w / (rxHistory.length - 1);
+
+          let dRx = `M0,${h - rxHistory[0]}`;
+          let pRx = `0,${h} 0,${h - rxHistory[0]}`;
+          for (let i = 1; i < rxHistory.length; i++) {
+            const x = (i * step).toFixed(1);
+            const y = (h - rxHistory[i]).toFixed(1);
+            dRx += ` L${x},${y}`;
+            pRx += ` ${x},${y}`;
+          }
+          pRx += ` ${w},${h}`;
+
+          let dTx = `M0,${h - txHistory[0]}`;
+          let pTx = `0,${h} 0,${h - txHistory[0]}`;
+          for (let i = 1; i < txHistory.length; i++) {
+            const x = (i * step).toFixed(1);
+            const y = (h - txHistory[i]).toFixed(1);
+            dTx += ` L${x},${y}`;
+            pTx += ` ${x},${y}`;
+          }
+          pTx += ` ${w},${h}`;
+
+          pathRx.setAttribute('d', dRx);
+          polyRx.setAttribute('points', pRx);
+          pathTx.setAttribute('d', dTx);
+          polyTx.setAttribute('points', pTx);
+        }
+      }, 1000);
+    }
+
+    // Helper functions
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/[&<>"']/g, function(m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+      });
+    }
+
+    function escapeQuotes(str) {
+      if (!str) return '';
+      return String(str).replace(/'/g, "\\'");
+    }
+
+    // Initialize application immediately (Both DOM ready & instant fallback)
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
+  </script>
+</body>
+</html>
